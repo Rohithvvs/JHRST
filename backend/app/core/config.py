@@ -37,6 +37,9 @@ class Settings(BaseSettings):
         "http://127.0.0.1:5173",
         "http://localhost:3000",
         "http://127.0.0.1:3000",
+        "https://jhrst.vercel.app",
+        "http://www.jhrsttech.com",
+        "https://www.jhrsttech.com",
         "https://jhrst.com",
         "https://www.jhrst.com"
     ]
@@ -48,7 +51,7 @@ class Settings(BaseSettings):
     SMTP_USER: str = ""
     SMTP_PASSWORD: str = ""
     SMTP_FROM_EMAIL: str = "notifications@jhrst.com"
-    INQUIRY_RECEIVER_EMAIL: str = "contact@jhrst.com"
+    INQUIRY_RECEIVER_EMAIL: str = "jhrst9966@gmail.com"
     
     # Upload Settings
     UPLOAD_DIR: str = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../uploads"))

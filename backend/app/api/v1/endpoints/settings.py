@@ -24,10 +24,10 @@ def get_public_settings(db: Session = Depends(get_db)):
     data = {
         "company_name": "JHRST Tech Solutions",
         "tagline": "BUILD. INNOVATE. GROW.",
-        "email": "contact@jhrst.com",
-        "phone": "+1 (555) 019-2834",
-        "address": "Tech District, Innovation Hub (Editable)",
-        "business_hours": "Monday - Friday: 9:00 AM - 6:00 PM",
+        "email": "jhrst9966@gmail.com",
+        "phone": "+91 8886315136",
+        "address": "Bengaluru, Karnataka, India – 560068",
+        "business_hours": "Monday - Saturday: 9:00 AM - 6:00 PM IST",
         "linkedin_url": "https://linkedin.com/company/jhrst-tech-solutions",
         "instagram_url": "https://instagram.com/jhrsttech",
         "github_url": "https://github.com/jhrst-tech"

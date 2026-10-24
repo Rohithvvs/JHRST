@@ -501,10 +501,10 @@ def seed_database():
             settings_data = [
                 {"key": "company_name", "value": "JHRST Tech Solutions", "category": "brand"},
                 {"key": "tagline", "value": "BUILD. INNOVATE. GROW.", "category": "brand"},
-                {"key": "email", "value": "contact@jhrst.com", "category": "contact"},
-                {"key": "phone", "value": "+1 (555) 019-2834", "category": "contact"},
-                {"key": "address", "value": "Tech District, Innovation Hub (Editable)", "category": "contact"},
-                {"key": "business_hours", "value": "Monday - Friday: 9:00 AM - 6:00 PM EST", "category": "contact"},
+                {"key": "email", "value": "jhrst9966@gmail.com", "category": "contact"},
+                {"key": "phone", "value": "+91 8886315136", "category": "contact"},
+                {"key": "address", "value": "Bengaluru, Karnataka, India – 560068", "category": "contact"},
+                {"key": "business_hours", "value": "Monday - Saturday: 9:00 AM - 6:00 PM IST", "category": "contact"},
                 {"key": "linkedin_url", "value": "https://linkedin.com/company/jhrst-tech-solutions", "category": "social"},
                 {"key": "instagram_url", "value": "https://instagram.com/jhrsttech", "category": "social"},
                 {"key": "github_url", "value": "https://github.com/jhrst-tech", "category": "social"}
@@ -512,6 +512,21 @@ def seed_database():
             for st in settings_data:
                 db.add(WebsiteSetting(**st))
             print("Seeded Website Settings.")
+        else:
+            # Update existing website settings with the verified contact details
+            updates = {
+                "email": "jhrst9966@gmail.com",
+                "phone": "+91 8886315136",
+                "address": "Bengaluru, Karnataka, India – 560068",
+                "business_hours": "Monday - Saturday: 9:00 AM - 6:00 PM IST"
+            }
+            for key, val in updates.items():
+                rec = db.query(WebsiteSetting).filter(WebsiteSetting.key == key).first()
+                if rec:
+                    rec.value = val
+                else:
+                    db.add(WebsiteSetting(key=key, value=val, category="contact"))
+            print("Updated existing Website Settings with verified company information.")
 
         db.commit()
         print("Database seeding completed successfully.")

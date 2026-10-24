@@ -61,7 +61,7 @@ export const Terms: React.FC = () => {
           <div className="space-y-3">
             <h2 className="text-xl font-bold text-white font-heading">6. Contact &amp; Governance</h2>
             <p>
-              For inquiries regarding these Terms and Conditions, please contact us at <a href="mailto:contact@jhrst.com" className="text-gold-400 hover:underline">contact@jhrst.com</a>.
+              For inquiries regarding these Terms and Conditions, please contact us at <a href="mailto:jhrst9966@gmail.com" className="text-gold-400 hover:underline">jhrst9966@gmail.com</a>.
             </p>
           </div>
         </div>

@@ -59,7 +59,7 @@ export const PrivacyPolicy: React.FC = () => {
           <div className="space-y-3">
             <h2 className="text-xl font-bold text-white font-heading">5. Data Retention &amp; User Rights</h2>
             <p>
-              Inquiries and job applications are retained only as long as necessary for evaluation or ongoing business discussions. You retain the right to request review, correction, or deletion of your submitted information by contacting our privacy coordinator at <a href="mailto:contact@jhrst.com" className="text-gold-400 hover:underline">contact@jhrst.com</a>.
+              Inquiries and job applications are retained only as long as necessary for evaluation or ongoing business discussions. You retain the right to request review, correction, or deletion of your submitted information by contacting our privacy coordinator at <a href="mailto:jhrst9966@gmail.com" className="text-gold-400 hover:underline">jhrst9966@gmail.com</a>.
             </p>
           </div>
 

@@ -205,7 +205,12 @@ Builds cleanly with exit code 0 and code-split production bundles.
 - **File Upload Protection**: Only `.pdf` files with valid `%PDF` headers are accepted; strict 5MB size limit; stored with cryptographically unique UUIDs outside public static web roots.
 - **HTTP Headers**: Security headers (`X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, `X-XSS-Protection: 1; mode=block`, `Referrer-Policy: strict-origin-when-cross-origin`) applied on all responses.
 - **CORS**: Domain allowlisting configured via environment settings.
-- **No Fabrications**: No invented client logos, false revenue figures, or fake reviews. All placeholders are clearly indicated and editable.
+- **Verified Company Details**:
+  - **Phone**: `+91 8886315136`
+  - **Email**: `jhrst9966@gmail.com`
+  - **Website**: `https://jhrst.vercel.app/` / `www.jhrsttech.com`
+  - **Address**: `Bengaluru, Karnataka, India – 560068`
+  - **Hours**: `Monday - Saturday: 9:00 AM - 6:00 PM IST`
 
 ---
 

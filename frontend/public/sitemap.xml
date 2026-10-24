@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jhrst.com/</loc>
+    <loc>https://jhrst.vercel.app/</loc>
     <lastmod>2026-10-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://jhrst.com/about</loc>
+    <loc>https://jhrst.vercel.app/about</loc>
     <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jhrst.com/services</loc>
+    <loc>https://jhrst.vercel.app/services</loc>
     <lastmod>2026-10-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://jhrst.com/ai-solutions</loc>
+    <loc>https://jhrst.vercel.app/ai-solutions</loc>
     <lastmod>2026-10-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://jhrst.com/projects</loc>
+    <loc>https://jhrst.vercel.app/projects</loc>
     <lastmod>2026-10-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jhrst.com/careers</loc>
+    <loc>https://jhrst.vercel.app/careers</loc>
     <lastmod>2026-10-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jhrst.com/contact</loc>
+    <loc>https://jhrst.vercel.app/contact</loc>
     <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jhrst.com/privacy-policy</loc>
+    <loc>https://jhrst.vercel.app/privacy-policy</loc>
     <lastmod>2026-10-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://jhrst.com/terms</loc>
+    <loc>https://jhrst.vercel.app/terms</loc>
     <lastmod>2026-10-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

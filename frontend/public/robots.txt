@@ -3,5 +3,5 @@ Allow: /
 Disallow: /admin
 Disallow: /api/
 
-Sitemap: https://jhrst.com/sitemap.xml
+Sitemap: https://jhrst.vercel.app/sitemap.xml
 
