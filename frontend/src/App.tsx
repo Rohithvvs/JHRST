@@ -1,8 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Outlet, useLocation } from 'react-router-dom';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { ScrollToTop } from './components/common/ScrollToTop';
+import { CursorGlow } from './components/common/CursorGlow';
 import { ToastProvider } from './context/ToastContext';
 import { AuthProvider } from './context/AuthContext';
 
@@ -30,11 +32,22 @@ import { AdminContent } from './pages/admin/AdminContent';
 
 // Public Layout Wrapper with Navbar & Footer
 const PublicLayout: React.FC = () => {
+  const location = useLocation();
+  const reduce = useReducedMotion();
+
   return (
     <div className="min-h-screen bg-[#050505] text-white flex flex-col justify-between selection:bg-gold-500 selection:text-black">
+      <CursorGlow />
       <Navbar />
       <main className="flex-1">
-        <Outlet />
+        <motion.div
+          key={location.pathname}
+          initial={reduce ? false : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <Outlet />
+        </motion.div>
       </main>
       <Footer />
     </div>

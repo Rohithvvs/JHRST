@@ -16,6 +16,7 @@ import {
 import { Badge } from '../components/common/Badge';
 import { Button } from '../components/common/Button';
 import { SectionHeading } from '../components/common/SectionHeading';
+import { TiltCard } from '../components/common/TiltCard';
 import { api, fallbackAIProducts } from '../lib/api';
 import { AIProduct } from '../types';
 
@@ -75,9 +76,9 @@ export const AISolutions: React.FC = () => {
             {products.map((prod, idx) => {
               const Icon = iconMap[idx % iconMap.length];
               return (
-                <div
+                <TiltCard
                   key={prod.slug}
-                  className="p-8 rounded-3xl glass-card glass-card-hover flex flex-col justify-between"
+                  className="flex h-full flex-col justify-between p-8 rounded-3xl glass-card glass-card-glow"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-6">
@@ -134,7 +135,7 @@ export const AISolutions: React.FC = () => {
                       </Button>
                     </Link>
                   </div>
-                </div>
+                </TiltCard>
               );
             })}
           </div>

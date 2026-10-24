@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { SectionHeading } from '../common/SectionHeading';
+import { TiltCard } from '../common/TiltCard';
 import { Search, FileText, Palette, Code, CheckCircle, Rocket, RefreshCcw, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -84,12 +85,11 @@ export const DevelopmentProcess: React.FC = () => {
             const Icon = step.icon;
             const isSelected = activeStep === idx;
             return (
-              <motion.div
+              <TiltCard
                 key={step.number}
                 onClick={() => setActiveStep(idx)}
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.2 }}
-                className={`cursor-pointer p-5 rounded-2xl border transition-all duration-300 flex flex-col justify-between select-none ${
+                maxTilt={7}
+                className={`cursor-pointer p-5 rounded-2xl border flex flex-col justify-between select-none ${
                   isSelected
                     ? 'glass-card border-gold-400 shadow-gold-sm bg-gold-500/10'
                     : 'bg-[#101010] border-white/[0.06] hover:border-gold-500/40 hover:bg-[#141414]'
@@ -125,7 +125,7 @@ export const DevelopmentProcess: React.FC = () => {
                   <span>Phase {idx + 1}</span>
                   <span className={isSelected ? 'text-gold-400' : 'text-gray-600'}>●</span>
                 </div>
-              </motion.div>
+              </TiltCard>
             );
           })}
         </div>
@@ -134,10 +134,11 @@ export const DevelopmentProcess: React.FC = () => {
         <AnimatePresence mode="wait">
           <motion.div
             key={activeStep}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.25 }}
+            initial={{ opacity: 0, y: 16, rotateX: -16 }}
+            animate={{ opacity: 1, y: 0, rotateX: 0 }}
+            exit={{ opacity: 0, y: -10, rotateX: 10 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            style={{ transformPerspective: 1100, transformOrigin: 'top center' }}
             className="p-8 rounded-2xl glass-card border border-gold-500/40 shadow-xl grid grid-cols-1 md:grid-cols-12 gap-6 items-center"
           >
             <div className="md:col-span-8 space-y-2">

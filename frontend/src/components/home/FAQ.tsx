@@ -115,12 +115,18 @@ export const FAQ: React.FC = () => {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: 'easeInOut' }}
+                      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 pb-6 text-sm text-gray-300 leading-relaxed border-t border-white/[0.06] pt-4">
+                      <motion.div
+                        initial={{ rotateX: -12, y: -8 }}
+                        animate={{ rotateX: 0, y: 0 }}
+                        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                        style={{ transformPerspective: 800, transformOrigin: 'top center' }}
+                        className="px-6 pb-6 text-sm text-gray-300 leading-relaxed border-t border-white/[0.06] pt-4"
+                      >
                         {faq.answer}
-                      </div>
+                      </motion.div>
                     </motion.div>
                   )}
                 </AnimatePresence>

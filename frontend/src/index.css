@@ -100,6 +100,15 @@
     transform: translateY(-3px);
   }
 
+  /* Hover glow without a CSS transform, so 3D tilt can own the transform. */
+  .glass-card-glow {
+    transition: border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .glass-card-glow:hover {
+    border-color: rgba(212, 175, 55, 0.5);
+    box-shadow: 0 22px 48px -16px rgba(0, 0, 0, 0.75), 0 0 32px -8px rgba(212, 175, 55, 0.38), inset 0 1px 0 0 rgba(245, 215, 110, 0.22);
+  }
+
   .bg-grid-pattern {
     background-size: 40px 40px;
     background-image: 
@@ -124,6 +133,56 @@
 
   .animate-shimmer {
     animation: shimmer 2.5s infinite;
+  }
+
+  .scene-3d {
+    perspective: 1100px;
+    transform-style: preserve-3d;
+  }
+
+  @keyframes spin-ring {
+    from { transform: rotateX(72deg) rotateZ(0deg); }
+    to { transform: rotateX(72deg) rotateZ(360deg); }
+  }
+
+  @keyframes spin-ring-reverse {
+    from { transform: rotateX(66deg) rotateY(24deg) rotateZ(0deg); }
+    to { transform: rotateX(66deg) rotateY(24deg) rotateZ(-360deg); }
+  }
+
+  .ring-3d,
+  .ring-3d-alt {
+    position: absolute;
+    border-radius: 9999px;
+    pointer-events: none;
+  }
+
+  .ring-3d {
+    inset: 14%;
+    border: 1px solid rgba(212, 175, 55, 0.28);
+    box-shadow: 0 0 24px rgba(212, 175, 55, 0.08);
+    animation: spin-ring 18s linear infinite;
+  }
+
+  .ring-3d-alt {
+    inset: 6%;
+    border: 1px dashed rgba(255, 255, 255, 0.14);
+    animation: spin-ring-reverse 26s linear infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-float,
+  .animate-ping,
+  .animate-pulse,
+  .animate-shimmer,
+  .ring-3d,
+  .ring-3d-alt {
+    animation: none !important;
   }
 }
 

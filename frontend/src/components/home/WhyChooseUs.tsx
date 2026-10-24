@@ -1,7 +1,8 @@
 import React from 'react';
 import { Lightbulb, Users, Network, RefreshCw, ShieldCheck, Zap, ArrowUpRight } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { SectionHeading } from '../common/SectionHeading';
+import { Reveal } from '../common/Reveal';
+import { TiltCard } from '../common/TiltCard';
 
 export const WhyChooseUs: React.FC = () => {
   const values = [
@@ -52,14 +53,8 @@ export const WhyChooseUs: React.FC = () => {
           {values.map((val, idx) => {
             const Icon = val.icon;
             return (
-              <motion.div
-                key={val.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="p-8 rounded-2xl glass-card glass-card-hover group flex flex-col justify-between"
-              >
+              <Reveal key={val.title} delay={idx * 0.08} className="h-full">
+                <TiltCard className="flex h-full flex-col justify-between p-8 rounded-2xl glass-card glass-card-glow group">
                 <div>
                   <div className="flex items-center justify-between mb-6">
                     <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-500/15 to-transparent border border-gold-500/30 flex items-center justify-center text-gold-300 group-hover:scale-105 group-hover:border-gold-400/60 transition-all duration-300 shadow-[0_0_15px_-3px_rgba(212,175,55,0.15)]">
@@ -88,7 +83,8 @@ export const WhyChooseUs: React.FC = () => {
                   </div>
                   <span className="text-xs text-gold-400/60 font-mono">0{idx + 1}</span>
                 </div>
-              </motion.div>
+                </TiltCard>
+              </Reveal>
             );
           })}
         </div>

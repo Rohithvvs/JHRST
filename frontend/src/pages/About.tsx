@@ -21,6 +21,7 @@ import {
 import { Badge } from '../components/common/Badge';
 import { Button } from '../components/common/Button';
 import { SectionHeading } from '../components/common/SectionHeading';
+import { TiltCard } from '../components/common/TiltCard';
 import { DevelopmentProcess } from '../components/home/DevelopmentProcess';
 
 export const About: React.FC = () => {
@@ -90,7 +91,7 @@ export const About: React.FC = () => {
       <section className="py-20 bg-[#080808]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-2xl glass-card glass-card-hover">
+            <TiltCard className="p-8 rounded-2xl glass-card glass-card-glow">
               <div className="w-14 h-14 rounded-2xl bg-gold-500/15 border border-gold-500/30 flex items-center justify-center text-gold-300 mb-6 shadow-gold-sm">
                 <Target className="w-7 h-7" />
               </div>
@@ -100,9 +101,9 @@ export const About: React.FC = () => {
               <p className="text-sm text-gray-300 leading-relaxed">
                 To build reliable, accessible, and innovative technology solutions that solve real-world problems and help organizations grow sustainably.
               </p>
-            </div>
+            </TiltCard>
 
-            <div className="p-8 rounded-2xl glass-card glass-card-hover">
+            <TiltCard className="p-8 rounded-2xl glass-card glass-card-glow">
               <div className="w-14 h-14 rounded-2xl bg-gold-500/15 border border-gold-500/30 flex items-center justify-center text-gold-300 mb-6 shadow-gold-sm">
                 <Compass className="w-7 h-7" />
               </div>
@@ -112,9 +113,9 @@ export const About: React.FC = () => {
               <p className="text-sm text-gray-300 leading-relaxed">
                 To help businesses and individuals embrace modern technology to create smarter, more connected, and more efficient digital experiences.
               </p>
-            </div>
+            </TiltCard>
 
-            <div className="p-8 rounded-2xl glass-card glass-card-hover">
+            <TiltCard className="p-8 rounded-2xl glass-card glass-card-glow">
               <div className="w-14 h-14 rounded-2xl bg-gold-500/15 border border-gold-500/30 flex items-center justify-center text-gold-300 mb-6 shadow-gold-sm">
                 <Zap className="w-7 h-7" />
               </div>
@@ -124,7 +125,7 @@ export const About: React.FC = () => {
               <p className="text-sm text-gray-300 leading-relaxed">
                 We combine thoughtful planning, modern engineering, continuous improvement, and user-focused design to deliver meaningful digital products.
               </p>
-            </div>
+            </TiltCard>
           </div>
         </div>
       </section>
@@ -143,9 +144,9 @@ export const About: React.FC = () => {
             {values.map((val) => {
               const Icon = val.icon;
               return (
-                <div
+                <TiltCard
                   key={val.title}
-                  className="p-6 rounded-2xl glass-card glass-card-hover"
+                  className="h-full p-6 rounded-2xl glass-card glass-card-glow"
                 >
                   <div className="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/25 flex items-center justify-center text-gold-400 mb-4">
                     <Icon className="w-6 h-6" />
@@ -156,7 +157,7 @@ export const About: React.FC = () => {
                   <p className="text-xs text-gray-300 leading-relaxed">
                     {val.desc}
                   </p>
-                </div>
+                </TiltCard>
               );
             })}
           </div>

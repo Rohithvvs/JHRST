@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Bot, UserCheck, Eye, Network, ArrowRight, Sparkles, Terminal, CheckCircle2, Play } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SectionHeading } from '../common/SectionHeading';
+import { Reveal } from '../common/Reveal';
+import { TiltCard } from '../common/TiltCard';
 import { Button } from '../common/Button';
 import { Badge } from '../common/Badge';
 
@@ -101,14 +103,8 @@ export const AISolutionsPreview: React.FC = () => {
           {aiCategories.map((item, idx) => {
             const Icon = item.icon;
             return (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="p-8 rounded-2xl glass-card glass-card-hover group flex flex-col justify-between"
-              >
+              <Reveal key={item.title} delay={idx * 0.08} className="h-full">
+                <TiltCard className="flex h-full flex-col justify-between p-8 rounded-2xl glass-card glass-card-glow group">
                 <div>
                   <div className="flex items-center justify-between mb-6">
                     <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-500/15 to-transparent border border-gold-500/30 flex items-center justify-center text-gold-300 group-hover:scale-105 group-hover:border-gold-400/60 transition-all duration-300 shadow-[0_0_15px_-3px_rgba(212,175,55,0.15)]">
@@ -154,18 +150,19 @@ export const AISolutionsPreview: React.FC = () => {
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
-              </motion.div>
+                </TiltCard>
+              </Reveal>
             );
           })}
         </div>
 
         {/* Live Interactive AI Terminal Sandbox Preview */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="rounded-2xl glass-card border border-gold-500/30 overflow-hidden shadow-2xl"
-        >
+        <Reveal>
+          <TiltCard
+            maxTilt={4}
+            glare
+            className="rounded-2xl glass-card border border-gold-500/30 overflow-hidden shadow-2xl"
+          >
           {/* Terminal Top Bar */}
           <div className="px-6 py-4 bg-[#0e0e0e] border-b border-[#222222] flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-3">
@@ -200,6 +197,16 @@ export const AISolutionsPreview: React.FC = () => {
 
           {/* Terminal Body */}
           <div className="p-6 font-mono text-xs sm:text-sm bg-[#080808] space-y-4">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab}
+                initial={{ opacity: 0, rotateX: -10, y: 8 }}
+                animate={{ opacity: 1, rotateX: 0, y: 0 }}
+                exit={{ opacity: 0, rotateX: 8, y: -8 }}
+                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                style={{ transformPerspective: 800, transformOrigin: 'top center' }}
+                className="space-y-4"
+              >
             <div className="flex items-center gap-2 text-gold-400">
               <span className="text-emerald-400 font-bold">&gt;</span>
               <span className="text-gray-300">{simulationPresets[activeTab].query}</span>
@@ -207,14 +214,22 @@ export const AISolutionsPreview: React.FC = () => {
 
             <div className="space-y-1.5 pt-2 pl-4 border-l-2 border-gold-500/30">
               {simulationPresets[activeTab].tokens.map((token, idx) => (
-                <div key={idx} className="text-gray-400 flex items-center gap-2">
+                <motion.div
+                  key={`${activeTab}-${token}`}
+                  initial={{ opacity: 0, x: -12 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.28, delay: 0.05 + idx * 0.06 }}
+                  className="text-gray-400 flex items-center gap-2"
+                >
                   <span className="text-gold-500/60 font-mono text-[11px]">[0{idx + 1}]</span>
                   <span className={idx === simulationPresets[activeTab].tokens.length - 1 ? 'text-emerald-400 font-semibold' : 'text-gray-300'}>
                     {token}
                   </span>
-                </div>
+                </motion.div>
               ))}
             </div>
+              </motion.div>
+            </AnimatePresence>
 
             {/* Live Metrics Bar */}
             <div className="pt-4 mt-4 border-t border-[#1a1a1a] flex flex-wrap items-center justify-between gap-4 text-xs">
@@ -235,7 +250,8 @@ export const AISolutionsPreview: React.FC = () => {
               <span className="text-[11px] text-gray-500 italic">Click presets above to toggle simulation</span>
             </div>
           </div>
-        </motion.div>
+          </TiltCard>
+        </Reveal>
 
         {/* Action CTAs */}
         <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4">

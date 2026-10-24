@@ -4,6 +4,8 @@ import { Brain, Globe, Smartphone, Cpu, Bot, Layout, ArrowRight, Check, Sparkles
 import { Badge } from '../components/common/Badge';
 import { Button } from '../components/common/Button';
 import { SectionHeading } from '../components/common/SectionHeading';
+import { Reveal } from '../components/common/Reveal';
+import { TiltCard } from '../components/common/TiltCard';
 import { api, fallbackServices } from '../lib/api';
 import { Service } from '../types';
 
@@ -52,10 +54,11 @@ export const Services: React.FC = () => {
               const isEven = index % 2 === 1;
 
               return (
-                <div
-                  key={service.slug}
+                <Reveal key={service.slug} delay={index * 0.04}>
+                <TiltCard
                   id={service.slug}
-                  className="p-8 sm:p-10 rounded-3xl bg-[#0f0f0f] border border-[#262626] hover:border-gold-500/40 transition-all duration-300 shadow-card"
+                  maxTilt={4}
+                  className="p-8 sm:p-10 rounded-3xl bg-[#0f0f0f] border border-[#262626] glass-card-glow shadow-card"
                 >
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                     {/* Left Info: Icon, Title, Description (7 cols) */}
@@ -145,7 +148,8 @@ export const Services: React.FC = () => {
                       )}
                     </div>
                   </div>
-                </div>
+                </TiltCard>
+                </Reveal>
               );
             })}
           </div>

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Brain, Globe, Smartphone, Cpu, Bot, Layout, ArrowRight, CheckCircle } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { SectionHeading } from '../common/SectionHeading';
+import { Reveal } from '../common/Reveal';
+import { TiltCard } from '../common/TiltCard';
 import { Button } from '../common/Button';
 import { api, fallbackServices } from '../../lib/api';
 import { Service } from '../../types';
@@ -40,14 +41,8 @@ export const ServicesPreview: React.FC = () => {
           {services.slice(0, 6).map((service, index) => {
             const Icon = iconMap[service.icon_name] || Cpu;
             return (
-              <motion.div
-                key={service.slug}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="flex flex-col justify-between p-8 rounded-2xl glass-card glass-card-hover group"
-              >
+              <Reveal key={service.slug} delay={index * 0.08} className="h-full">
+                <TiltCard className="flex h-full flex-col justify-between p-8 rounded-2xl glass-card glass-card-glow group">
                 <div>
                   <div className="flex items-center justify-between mb-6">
                     <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-500/15 to-transparent border border-gold-500/30 flex items-center justify-center text-gold-300 group-hover:scale-105 group-hover:border-gold-400/60 transition-all duration-300 shadow-[0_0_15px_-3px_rgba(212,175,55,0.15)]">
@@ -90,7 +85,8 @@ export const ServicesPreview: React.FC = () => {
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
-              </motion.div>
+                </TiltCard>
+              </Reveal>
             );
           })}
         </div>

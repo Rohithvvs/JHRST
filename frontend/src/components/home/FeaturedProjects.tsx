@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ExternalLink, ArrowRight, Eye, Code2, Sparkles, Terminal } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SectionHeading } from '../common/SectionHeading';
+import { TiltCard } from '../common/TiltCard';
 import { Button } from '../common/Button';
 import { Badge } from '../common/Badge';
 import { Modal } from '../common/Modal';
@@ -61,13 +62,20 @@ export const FeaturedProjects: React.FC = () => {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-full text-xs font-medium transition-all duration-200 ${
+              className={`relative px-4 py-2 rounded-full text-xs font-medium border transition-colors duration-200 ${
                 activeCategory === cat
-                  ? 'bg-gradient-to-r from-[#F5D76E] via-[#D4AF37] to-[#B89428] text-black font-bold shadow-gold-sm'
-                  : 'bg-[#121212] text-gray-300 hover:text-white border border-[#262626] hover:border-gold-500/30'
+                  ? 'text-black font-bold border-transparent'
+                  : 'bg-[#121212] text-gray-300 hover:text-white border-[#262626] hover:border-gold-500/30'
               }`}
             >
-              {cat}
+              {activeCategory === cat && (
+                <motion.span
+                  layoutId="project-filter-pill"
+                  className="absolute inset-0 rounded-full bg-gradient-to-r from-[#F5D76E] via-[#D4AF37] to-[#B89428] shadow-gold-sm"
+                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                />
+              )}
+              <span className="relative z-10">{cat}</span>
             </button>
           ))}
         </div>
@@ -86,8 +94,10 @@ export const FeaturedProjects: React.FC = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="flex flex-col justify-between rounded-2xl glass-card glass-card-hover group overflow-hidden"
+                className="h-full"
+                style={{ perspective: 1000 }}
               >
+                <TiltCard className="flex h-full flex-col justify-between rounded-2xl glass-card glass-card-glow group overflow-hidden">
                 {/* Browser / Application Frame Header */}
                 <div className="bg-[#121212] border-b border-white/[0.06] p-4 flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
@@ -168,6 +178,7 @@ export const FeaturedProjects: React.FC = () => {
                     </Link>
                   </div>
                 </div>
+                </TiltCard>
               </motion.div>
             ))}
           </AnimatePresence>

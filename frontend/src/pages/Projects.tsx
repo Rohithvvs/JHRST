@@ -4,6 +4,7 @@ import { Search, Eye, ArrowRight, Code2, Sparkles, Filter } from 'lucide-react';
 import { Badge } from '../components/common/Badge';
 import { Button } from '../components/common/Button';
 import { Modal } from '../components/common/Modal';
+import { TiltCard } from '../components/common/TiltCard';
 import { api, fallbackProjects } from '../lib/api';
 import { Project } from '../types';
 
@@ -120,9 +121,9 @@ export const Projects: React.FC = () => {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredProjects.map((project) => (
-                <div
+                <TiltCard
                   key={project.slug}
-                  className="flex flex-col justify-between rounded-2xl bg-[#101010] border border-[#262626] hover:border-gold-500/40 transition-all duration-300 group hover:-translate-y-1.5 shadow-card overflow-hidden"
+                  className="flex h-full flex-col justify-between rounded-2xl bg-[#101010] border border-[#262626] glass-card-glow group shadow-card overflow-hidden"
                 >
                   {/* Visual card header */}
                   <div className="h-44 bg-gradient-to-br from-[#1a1a1a] to-[#0e0e0e] border-b border-[#222] p-6 relative flex flex-col justify-between">
@@ -183,7 +184,7 @@ export const Projects: React.FC = () => {
                       </Link>
                     </div>
                   </div>
-                </div>
+                </TiltCard>
               ))}
             </div>
           )}

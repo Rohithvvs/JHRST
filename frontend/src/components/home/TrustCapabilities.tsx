@@ -1,6 +1,8 @@
 import React from 'react';
 import { Brain, Globe, Smartphone, Cpu, Bot, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Reveal } from '../common/Reveal';
+import { TiltCard } from '../common/TiltCard';
 
 export const TrustCapabilities: React.FC = () => {
   const capabilities = [
@@ -64,14 +66,11 @@ export const TrustCapabilities: React.FC = () => {
           {capabilities.map((cap, index) => {
             const Icon = cap.icon;
             return (
-              <motion.div
-                key={cap.title}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
-                className="group p-5 rounded-2xl glass-card glass-card-hover flex flex-col items-center text-center cursor-default"
-              >
+              <Reveal key={cap.title} delay={index * 0.06} className="h-full">
+                <TiltCard
+                  maxTilt={10}
+                  className="group flex h-full cursor-default flex-col items-center p-5 text-center rounded-2xl glass-card glass-card-glow"
+                >
                 <div className="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/25 flex items-center justify-center text-gold-400 mb-3.5 group-hover:scale-110 group-hover:border-gold-400/60 group-hover:bg-gold-500/20 transition-all duration-300">
                   <Icon className="w-5 h-5" />
                 </div>
@@ -81,7 +80,8 @@ export const TrustCapabilities: React.FC = () => {
                 <p className="text-[11px] text-gray-400 mt-2 line-clamp-2 leading-relaxed">
                   {cap.desc}
                 </p>
-              </motion.div>
+                </TiltCard>
+              </Reveal>
             );
           })}
         </div>
@@ -92,12 +92,15 @@ export const TrustCapabilities: React.FC = () => {
             Engineered With:
           </span>
           {techStack.map((tech) => (
-            <span
+            <motion.span
               key={tech}
+              whileHover={{ rotateX: 16, rotateY: -12, scale: 1.08, z: 12 }}
+              transition={{ type: 'spring', stiffness: 320, damping: 16 }}
+              style={{ transformPerspective: 500 }}
               className="px-3 py-1 rounded-full bg-[#121212] border border-[#242424] text-gray-300 font-mono hover:text-gold-300 hover:border-gold-500/30 transition-colors cursor-default"
             >
               {tech}
-            </span>
+            </motion.span>
           ))}
         </div>
       </div>

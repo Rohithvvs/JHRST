@@ -18,6 +18,7 @@ import { Badge } from '../components/common/Badge';
 import { Button } from '../components/common/Button';
 import { Modal } from '../components/common/Modal';
 import { SectionHeading } from '../components/common/SectionHeading';
+import { TiltCard } from '../components/common/TiltCard';
 import { useToast } from '../context/ToastContext';
 import { api, fallbackJobs } from '../lib/api';
 import { JobOpening } from '../types';
@@ -164,9 +165,10 @@ export const Careers: React.FC = () => {
 
           <div className="space-y-6">
             {jobs.map((job) => (
-              <div
+              <TiltCard
                 key={job.slug}
-                className="p-8 rounded-2xl glass-card glass-card-hover flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 group"
+                maxTilt={4}
+                className="p-8 rounded-2xl glass-card glass-card-glow flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 group"
               >
                 <div className="space-y-3 max-w-3xl">
                   <div className="flex flex-wrap items-center gap-2">
@@ -213,7 +215,7 @@ export const Careers: React.FC = () => {
                     Apply for Position
                   </Button>
                 </div>
-              </div>
+              </TiltCard>
             ))}
           </div>
 

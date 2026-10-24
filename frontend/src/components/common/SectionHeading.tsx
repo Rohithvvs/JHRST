@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Badge } from './Badge';
 
 interface SectionHeadingProps {
@@ -19,9 +20,17 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
   className = '',
 }) => {
   const isCenter = align === 'center';
+  const reduce = useReducedMotion();
 
   return (
-    <div className={`max-w-3xl ${isCenter ? 'mx-auto text-center' : 'text-left'} mb-14 ${className}`}>
+    <motion.div
+      initial={reduce ? false : { opacity: 0, y: 26, rotateX: 14 }}
+      whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      style={{ transformPerspective: 900, transformOrigin: 'center bottom' }}
+      className={`max-w-3xl ${isCenter ? 'mx-auto text-center' : 'text-left'} mb-14 ${className}`}
+    >
       {badge && (
         <div className="mb-4">
           <Badge variant="gold">{badge}</Badge>
@@ -38,7 +47,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
           {description}
         </p>
       )}
-    </div>
+    </motion.div>
   );
 };
 

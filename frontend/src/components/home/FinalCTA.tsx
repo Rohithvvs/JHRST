@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Layers, Sparkles, Clock, CheckCircle2 } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Reveal } from '../common/Reveal';
+import { TiltCard } from '../common/TiltCard';
 import { Button } from '../common/Button';
 import { Badge } from '../common/Badge';
 
@@ -13,13 +14,11 @@ export const FinalCTA: React.FC = () => {
       <div className="absolute inset-0 bg-grid-pattern opacity-25 pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="p-10 sm:p-14 rounded-3xl glass-card border border-gold-500/40 shadow-gold-glow text-center relative overflow-hidden"
-        >
+        <Reveal>
+          <TiltCard
+            maxTilt={5}
+            className="p-10 sm:p-14 rounded-3xl glass-card glass-card-glow border border-gold-500/40 shadow-gold-glow text-center relative overflow-hidden"
+          >
           {/* Top corner accents */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-[2px] bg-gradient-to-r from-transparent via-gold-400 to-transparent" />
 
@@ -76,7 +75,8 @@ export const FinalCTA: React.FC = () => {
               <span>Direct Lead Engineer Review</span>
             </div>
           </div>
-        </motion.div>
+          </TiltCard>
+        </Reveal>
       </div>
     </section>
   );

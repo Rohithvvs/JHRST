@@ -63,7 +63,7 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center justify-between">
             {/* Logo & Brand */}
             <Link to="/" className="flex items-center gap-3 group focus:outline-none">
-              <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-[#1c1c1c] to-[#0a0a0a] border border-gold-500/40 flex items-center justify-center p-2 shadow-gold-sm group-hover:border-gold-400 group-hover:shadow-gold-md transition-all duration-300">
+              <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-[#1c1c1c] to-[#0a0a0a] border border-gold-500/40 flex items-center justify-center p-2 shadow-gold-sm group-hover:border-gold-400 group-hover:shadow-gold-md transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(22deg)_rotateX(8deg)]">
                 {/* Stylized Futuristic JHRST Icon with Upward Arrow */}
                 <svg viewBox="0 0 40 40" className="w-full h-full">
                   <defs>
