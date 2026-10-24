@@ -90,9 +90,9 @@ export const About: React.FC = () => {
       <section className="py-20 bg-[#080808]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-2xl bg-[#111111] border border-[#262626] shadow-card">
-              <div className="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-6">
-                <Target className="w-6 h-6" />
+            <div className="p-8 rounded-2xl glass-card glass-card-hover">
+              <div className="w-14 h-14 rounded-2xl bg-gold-500/15 border border-gold-500/30 flex items-center justify-center text-gold-300 mb-6 shadow-gold-sm">
+                <Target className="w-7 h-7" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-3 font-heading">
                 Our Mission
@@ -102,9 +102,9 @@ export const About: React.FC = () => {
               </p>
             </div>
 
-            <div className="p-8 rounded-2xl bg-[#111111] border border-[#262626] shadow-card">
-              <div className="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-6">
-                <Compass className="w-6 h-6" />
+            <div className="p-8 rounded-2xl glass-card glass-card-hover">
+              <div className="w-14 h-14 rounded-2xl bg-gold-500/15 border border-gold-500/30 flex items-center justify-center text-gold-300 mb-6 shadow-gold-sm">
+                <Compass className="w-7 h-7" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-3 font-heading">
                 Our Vision
@@ -114,9 +114,9 @@ export const About: React.FC = () => {
               </p>
             </div>
 
-            <div className="p-8 rounded-2xl bg-[#111111] border border-[#262626] shadow-card">
-              <div className="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-6">
-                <Zap className="w-6 h-6" />
+            <div className="p-8 rounded-2xl glass-card glass-card-hover">
+              <div className="w-14 h-14 rounded-2xl bg-gold-500/15 border border-gold-500/30 flex items-center justify-center text-gold-300 mb-6 shadow-gold-sm">
+                <Zap className="w-7 h-7" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-3 font-heading">
                 Our Approach
@@ -145,10 +145,10 @@ export const About: React.FC = () => {
               return (
                 <div
                   key={val.title}
-                  className="p-6 rounded-2xl bg-[#0f0f0f] border border-[#242424] hover:border-gold-500/40 transition-all duration-300 shadow-card"
+                  className="p-6 rounded-2xl glass-card glass-card-hover"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/20 flex items-center justify-center text-gold-400 mb-4">
-                    <Icon className="w-5 h-5" />
+                  <div className="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/25 flex items-center justify-center text-gold-400 mb-4">
+                    <Icon className="w-6 h-6" />
                   </div>
                   <h4 className="text-lg font-bold text-white mb-2 font-heading">
                     {val.title}

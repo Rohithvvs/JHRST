@@ -1,60 +1,83 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Layers, Sparkles } from 'lucide-react';
+import { ArrowRight, Layers, Sparkles, Clock, CheckCircle2 } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { Button } from '../common/Button';
 import { Badge } from '../common/Badge';
 
 export const FinalCTA: React.FC = () => {
   return (
-    <section className="py-28 relative bg-[#060606] border-t border-[#1a1a1a] overflow-hidden">
+    <section className="py-28 relative bg-[#050505] border-t border-[#1a1a1a] overflow-hidden">
       {/* Centered subtle gold radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-gold-500/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[400px] bg-gold-500/[0.12] rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-25 pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <div className="mb-6 inline-block">
-          <Badge variant="gold">
-            READY TO COLLABORATE
-          </Badge>
-        </div>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="p-10 sm:p-14 rounded-3xl glass-card border border-gold-500/40 shadow-gold-glow text-center relative overflow-hidden"
+        >
+          {/* Top corner accents */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-[2px] bg-gradient-to-r from-transparent via-gold-400 to-transparent" />
 
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight font-heading mb-6">
-          Your Next Big Idea{' '}
-          <span className="text-gold-gradient">Starts Here.</span>
-        </h2>
+          <div className="mb-6 inline-block">
+            <Badge variant="gold">
+              READY TO COLLABORATE
+            </Badge>
+          </div>
 
-        <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto mb-10 font-normal">
-          Let's turn your idea into a digital product designed to solve real problems and create new opportunities through modern engineering and applied AI.
-        </p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight font-heading mb-6 max-w-3xl mx-auto">
+            Your Next Breakthrough Idea{' '}
+            <span className="text-gold-gradient block sm:inline">Starts Here.</span>
+          </h2>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link to="/contact">
-            <Button
-              variant="primary"
-              size="lg"
-              className="w-full sm:w-auto"
-              rightIcon={<ArrowRight className="w-4 h-4" />}
-            >
-              Start Your Project
-            </Button>
-          </Link>
+          <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto mb-10 font-normal">
+            Let's turn your vision into an enterprise digital product designed to solve complex business problems through modern engineering and applied AI systems.
+          </p>
 
-          <Link to="/services">
-            <Button
-              variant="secondary"
-              size="lg"
-              className="w-full sm:w-auto"
-              leftIcon={<Layers className="w-4 h-4 text-gold-400" />}
-            >
-              Explore Our Services
-            </Button>
-          </Link>
-        </div>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+            <Link to="/contact">
+              <Button
+                variant="primary"
+                size="lg"
+                className="w-full sm:w-auto shadow-gold-md hover:shadow-gold-glow"
+                rightIcon={<ArrowRight className="w-4 h-4" />}
+              >
+                Start Your Project
+              </Button>
+            </Link>
 
-        <p className="text-xs text-muted mt-8">
-          JHRST Tech Solutions &bull; BUILD. INNOVATE. GROW.
-        </p>
+            <Link to="/services">
+              <Button
+                variant="secondary"
+                size="lg"
+                className="w-full sm:w-auto border-white/10 hover:border-gold-500/50"
+                leftIcon={<Layers className="w-4 h-4 text-gold-400" />}
+              >
+                Explore Our Services
+              </Button>
+            </Link>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-gray-400 pt-6 border-t border-white/[0.08]">
+            <div className="flex items-center gap-1.5 font-mono">
+              <Clock className="w-3.5 h-3.5 text-gold-400" />
+              <span>Initial Estimate in 24 Hours</span>
+            </div>
+            <div className="flex items-center gap-1.5 font-mono">
+              <CheckCircle2 className="w-3.5 h-3.5 text-gold-400" />
+              <span>Non-Disclosure Protected (NDA)</span>
+            </div>
+            <div className="flex items-center gap-1.5 font-mono">
+              <Sparkles className="w-3.5 h-3.5 text-gold-400" />
+              <span>Direct Lead Engineer Review</span>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
 };
-

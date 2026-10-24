@@ -23,28 +23,44 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-[#1c1c1c]">
           {/* Column 1: Company Profile (spans 2 on desktop) */}
           <div className="lg:col-span-2 space-y-4">
-            <Link to="/" className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-lg bg-[#141414] border border-gold-500/40 flex items-center justify-center p-1">
-                <svg viewBox="0 0 100 100" className="w-full h-full">
+            <Link to="/" className="flex items-center gap-3 group">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#1c1c1c] to-[#0a0a0a] border border-gold-500/40 flex items-center justify-center p-2 shadow-gold-sm group-hover:border-gold-400 transition-colors">
+                <svg viewBox="0 0 40 40" className="w-full h-full">
+                  <defs>
+                    <linearGradient id="footerGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#FFF0B8" />
+                      <stop offset="40%" stopColor="#F5D76E" />
+                      <stop offset="80%" stopColor="#D4AF37" />
+                      <stop offset="100%" stopColor="#8C6E15" />
+                    </linearGradient>
+                  </defs>
                   <path
-                    d="M26 30 H74 M50 30 V70 M34 70 H66"
-                    stroke="#D4AF37"
-                    strokeWidth="8"
+                    d="M10 8 L18 8 L18 26 C18 30 14 32 10 30"
+                    stroke="url(#footerGoldGrad)"
+                    strokeWidth="3.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     fill="none"
                   />
-                  <circle cx="50" cy="50" r="4" fill="#F5D76E" />
+                  <path
+                    d="M22 28 L32 12 M24 12 L32 12 L32 20"
+                    stroke="url(#footerGoldGrad)"
+                    strokeWidth="3.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    fill="none"
+                  />
                 </svg>
               </div>
-              <span className="text-xl font-bold text-white font-heading tracking-tight">
-                JHRST Tech Solutions
-              </span>
+              <div className="flex flex-col">
+                <span className="text-xl font-bold text-white font-heading tracking-tight group-hover:text-gold-300 transition-colors">
+                  JHRST Tech Solutions
+                </span>
+                <span className="text-[10px] tracking-[0.2em] font-medium text-gold-400 uppercase -mt-0.5">
+                  BUILD. INNOVATE. GROW.
+                </span>
+              </div>
             </Link>
-
-            <p className="text-xs font-semibold tracking-widest text-gold-400 uppercase">
-              BUILD. INNOVATE. GROW.
-            </p>
 
             <p className="text-sm text-gray-400 leading-relaxed max-w-sm">
               Architecting dependable digital products through high-performance software engineering, applied artificial intelligence, and intelligent business automation.

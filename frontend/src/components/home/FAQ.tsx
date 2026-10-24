@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, HelpCircle, ArrowRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { SectionHeading } from '../common/SectionHeading';
+import { Button } from '../common/Button';
 
 interface FAQItem {
   question: string;
@@ -58,8 +61,11 @@ export const FAQ: React.FC = () => {
   };
 
   return (
-    <section className="py-24 relative bg-[#050505]">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 relative bg-[#050505] overflow-hidden">
+      {/* Background ambient light */}
+      <div className="absolute top-1/2 right-1/4 w-[400px] h-[400px] bg-gold-500/[0.04] rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
           badge="QUESTIONS &amp; ANSWERS"
           title="Frequently Asked"
@@ -71,43 +77,76 @@ export const FAQ: React.FC = () => {
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
-              <div
+              <motion.div
                 key={faq.question}
-                className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.35, delay: index * 0.05 }}
+                className={`rounded-2xl transition-all duration-300 overflow-hidden ${
                   isOpen
-                    ? 'bg-[#121212] border-gold-500/40 shadow-card'
-                    : 'bg-[#0d0d0d] border-[#222] hover:border-[#333]'
+                    ? 'glass-card border-gold-500/50 shadow-gold-sm'
+                    : 'bg-[#0d0d0d] border border-white/[0.06] hover:border-gold-500/30'
                 }`}
               >
                 <button
                   type="button"
                   onClick={() => toggleFAQ(index)}
-                  className="w-full py-5 px-6 flex items-center justify-between text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500/50"
+                  className="w-full py-5 px-6 flex items-center justify-between text-left focus:outline-none"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-base font-semibold text-white font-heading pr-4">
+                  <span className={`text-base font-semibold font-heading pr-4 transition-colors ${isOpen ? 'text-gold-200' : 'text-white'}`}>
                     {faq.question}
                   </span>
                   <div
-                    className={`w-7 h-7 rounded-full bg-[#181818] border border-[#2b2b2b] flex items-center justify-center shrink-0 text-gold-400 transition-transform duration-300 ${
-                      isOpen ? 'rotate-180 bg-gold-500/20 text-gold-300' : ''
+                    className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+                      isOpen
+                        ? 'bg-gold-500/20 text-gold-300 rotate-180 border border-gold-500/40'
+                        : 'bg-[#181818] text-gray-400 border border-white/[0.06]'
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />
                   </div>
                 </button>
 
-                {isOpen && (
-                  <div className="px-6 pb-6 text-sm text-gray-300 leading-relaxed border-t border-[#1a1a1a] pt-4 animate-fade-in">
-                    {faq.answer}
-                  </div>
-                )}
-              </div>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 pb-6 text-sm text-gray-300 leading-relaxed border-t border-white/[0.06] pt-4">
+                        {faq.answer}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             );
           })}
+        </div>
+
+        {/* Direct Contact Shortcut Pill */}
+        <div className="mt-12 p-6 rounded-2xl glass-card border border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-gold-500/15 border border-gold-500/30 flex items-center justify-center text-gold-300 shrink-0">
+              <HelpCircle className="w-5 h-5" />
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-white">Have a specific question?</p>
+              <p className="text-xs text-gray-400">Our engineering leads in Bengaluru are ready to help.</p>
+            </div>
+          </div>
+          <Link to="/contact">
+            <Button variant="secondary" size="sm" rightIcon={<ArrowRight className="w-3.5 h-3.5" />}>
+              Get in Touch
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
   );
 };
-

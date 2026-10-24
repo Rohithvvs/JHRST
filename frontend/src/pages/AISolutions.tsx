@@ -77,19 +77,19 @@ export const AISolutions: React.FC = () => {
               return (
                 <div
                   key={prod.slug}
-                  className="p-8 rounded-3xl bg-[#0e0e0e] border border-[#242424] hover:border-gold-500/40 transition-all duration-300 shadow-card flex flex-col justify-between"
+                  className="p-8 rounded-3xl glass-card glass-card-hover flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-6">
-                      <div className="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400">
-                        <Icon className="w-6 h-6" />
+                      <div className="w-14 h-14 rounded-2xl bg-gold-500/15 border border-gold-500/30 flex items-center justify-center text-gold-300 shadow-gold-sm">
+                        <Icon className="w-7 h-7" />
                       </div>
                       <Badge variant={statusVariant(prod.status)}>
                         {prod.status}
                       </Badge>
                     </div>
 
-                    <span className="text-xs font-semibold text-gold-400 uppercase tracking-wider">
+                    <span className="text-xs font-semibold text-gold-400 uppercase tracking-wider font-mono">
                       {prod.category}
                     </span>
                     <h3 className="text-2xl font-bold text-white font-heading mt-1 mb-3">
@@ -101,8 +101,8 @@ export const AISolutions: React.FC = () => {
                     </p>
 
                     {prod.problem_solved && (
-                      <div className="p-4 rounded-xl bg-[#141414] border border-[#222] mb-6">
-                        <p className="text-xs uppercase tracking-wider text-muted font-semibold mb-1">
+                      <div className="p-4 rounded-xl bg-[#141414] border border-white/[0.06] mb-6">
+                        <p className="text-xs uppercase tracking-wider text-gold-400/90 font-mono font-semibold mb-1">
                           Operational Friction Solved:
                         </p>
                         <p className="text-xs text-gray-300 leading-relaxed">
@@ -112,7 +112,7 @@ export const AISolutions: React.FC = () => {
                     )}
 
                     <div className="space-y-2 mb-6">
-                      <p className="text-xs uppercase tracking-wider text-muted font-semibold">
+                      <p className="text-xs uppercase tracking-wider text-muted font-mono font-semibold">
                         System Features:
                       </p>
                       {prod.features.map((feat, fIdx) => (
@@ -124,8 +124,8 @@ export const AISolutions: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="pt-6 border-t border-[#1a1a1a] flex items-center justify-between">
-                    <span className="text-xs text-muted">
+                  <div className="pt-6 border-t border-white/[0.06] flex items-center justify-between">
+                    <span className="text-xs text-muted font-mono">
                       Customizable Architecture
                     </span>
                     <Link to={`/contact?service=AI+Development`}>

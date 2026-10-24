@@ -166,24 +166,24 @@ export const Careers: React.FC = () => {
             {jobs.map((job) => (
               <div
                 key={job.slug}
-                className="p-8 rounded-2xl bg-[#0f0f0f] border border-[#242424] hover:border-gold-500/40 transition-all duration-300 shadow-card flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6"
+                className="p-8 rounded-2xl glass-card glass-card-hover flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 group"
               >
                 <div className="space-y-3 max-w-3xl">
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-xs font-semibold px-2.5 py-0.5 rounded bg-gold-500/10 text-gold-400 border border-gold-500/20 uppercase tracking-wider">
+                    <span className="text-xs font-semibold px-2.5 py-0.5 rounded bg-gold-500/10 text-gold-400 border border-gold-500/20 uppercase tracking-wider font-mono">
                       {job.department}
                     </span>
-                    <span className="text-xs text-gray-400 flex items-center gap-1">
-                      <Clock className="w-3.5 h-3.5 text-muted" />
+                    <span className="text-xs text-gray-400 flex items-center gap-1 font-mono">
+                      <Clock className="w-3.5 h-3.5 text-gold-400" />
                       {job.employment_type}
                     </span>
-                    <span className="text-xs text-gray-400 flex items-center gap-1">
-                      <MapPin className="w-3.5 h-3.5 text-muted" />
+                    <span className="text-xs text-gray-400 flex items-center gap-1 font-mono">
+                      <MapPin className="w-3.5 h-3.5 text-gold-400" />
                       {job.location}
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-white font-heading">
+                  <h3 className="text-2xl font-bold text-white font-heading group-hover:text-gold-200 transition-colors">
                     {job.title}
                   </h3>
 
@@ -192,10 +192,10 @@ export const Careers: React.FC = () => {
                   </p>
 
                   <div className="flex flex-wrap gap-1.5 pt-2">
-                    {job.requirements.slice(0, 3).map((req, idx) => (
+                    {job.requirements.slice(0, 4).map((req, idx) => (
                       <span
                         key={idx}
-                        className="text-[11px] px-2 py-0.5 rounded bg-[#161616] border border-[#292929] text-gray-300"
+                        className="text-[11px] px-2.5 py-1 rounded-md bg-[#161616] border border-white/[0.08] text-gray-300 font-mono"
                       >
                         {req}
                       </span>
@@ -207,7 +207,7 @@ export const Careers: React.FC = () => {
                   <Button
                     variant="primary"
                     size="md"
-                    className="w-full sm:w-auto"
+                    className="w-full sm:w-auto shadow-gold-sm hover:shadow-gold-md"
                     onClick={() => handleOpenApply(job)}
                   >
                     Apply for Position

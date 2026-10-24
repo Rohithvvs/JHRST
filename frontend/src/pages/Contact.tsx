@@ -226,6 +226,54 @@ export const Contact: React.FC = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Verified Digital Business Card Card */}
+              <div className="p-6 rounded-3xl glass-card border border-gold-500/30 shadow-card space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-gold-400" />
+                    <h4 className="text-sm font-bold text-white font-heading">
+                      Official Executive Card
+                    </h4>
+                  </div>
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-gold-400 bg-gold-500/10 px-2 py-0.5 rounded border border-gold-500/20">
+                    Scannable QR
+                  </span>
+                </div>
+
+                <div className="rounded-xl overflow-hidden border border-white/10 group relative">
+                  <img
+                    src="/jhrst_business_card.png"
+                    alt="JHRST Executive Business Card - Karaka Sai Chandra Sekhar"
+                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <a
+                      href="/jhrst_business_card_hd.png"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3 py-1.5 rounded-lg bg-gold-500 text-black text-xs font-bold shadow-lg"
+                    >
+                      View Full HD Card
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between pt-2 text-xs">
+                  <div>
+                    <p className="text-white font-medium">Karaka Sai Chandra Sekhar</p>
+                    <p className="text-gray-400 text-[11px]">AI Native Software Engineer &amp; Sales</p>
+                  </div>
+                  <a
+                    href="/jhrst_business_card_hd.png"
+                    download="JHRST_Business_Card.png"
+                    className="text-gold-400 hover:text-gold-300 font-medium inline-flex items-center gap-1 text-xs"
+                  >
+                    <span>Download</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </a>
+                </div>
+              </div>
             </div>
 
             {/* Right Column: Project Inquiry Form (7 cols) */}
