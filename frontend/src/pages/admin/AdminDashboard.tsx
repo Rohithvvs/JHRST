@@ -107,7 +107,7 @@ export const AdminDashboard: React.FC = () => {
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
           <Badge variant="gold">ADMINISTRATION CONSOLE</Badge>
-          <h1 className="text-2xl sm:text-3xl font-bold font-heading text-white mt-1">
+          <h1 className="text-2xl sm:text-3xl font-bold font-heading text-slate-900 mt-1">
             Executive Overview
           </h1>
           <p className="text-xs text-muted">
@@ -137,11 +137,11 @@ export const AdminDashboard: React.FC = () => {
             <Link
               key={card.label}
               to={card.link}
-              className="p-6 rounded-2xl bg-[#0e0e0e] border border-[#222] hover:border-gold-500/40 transition-all duration-300 shadow-card flex items-center justify-between group"
+              className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-gold-500/40 transition-all duration-300 shadow-card flex items-center justify-between group"
             >
               <div>
                 <span className="text-xs text-muted font-medium">{card.label}</span>
-                <p className="text-3xl font-bold text-white font-heading mt-1">
+                <p className="text-3xl font-bold text-slate-900 font-heading mt-1">
                   {card.val}
                 </p>
                 <p className="text-[11px] text-gold-400 mt-1 font-medium">{card.sub}</p>
@@ -157,8 +157,8 @@ export const AdminDashboard: React.FC = () => {
 
       {/* Quick Launch & Workflow shortcuts */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="p-6 rounded-2xl bg-[#0e0e0e] border border-[#222] shadow-card space-y-4">
-          <h3 className="text-base font-bold text-white font-heading flex items-center justify-between">
+        <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm shadow-card space-y-4">
+          <h3 className="text-base font-bold text-slate-900 font-heading flex items-center justify-between">
             <span>Recent Project Inquiries</span>
             <Link to="/admin/inquiries" className="text-xs text-gold-400 hover:underline">
               View All &rarr;
@@ -168,9 +168,9 @@ export const AdminDashboard: React.FC = () => {
           {stats?.recent_project_inquiries && stats.recent_project_inquiries.length > 0 ? (
             <div className="space-y-3">
               {stats.recent_project_inquiries.map((inq) => (
-                <div key={inq.id} className="p-3.5 rounded-xl bg-[#141414] border border-[#222] flex items-center justify-between text-xs">
+                <div key={inq.id} className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs">
                   <div>
-                    <p className="font-semibold text-white">{inq.full_name} ({inq.service_required})</p>
+                    <p className="font-semibold text-slate-900">{inq.full_name} ({inq.service_required})</p>
                     <p className="text-muted text-[11px]">{inq.email}</p>
                   </div>
                   <span className="px-2 py-0.5 rounded bg-gold-500/10 text-gold-300 text-[10px] font-medium border border-gold-500/20">
@@ -184,8 +184,8 @@ export const AdminDashboard: React.FC = () => {
           )}
         </div>
 
-        <div className="p-6 rounded-2xl bg-[#0e0e0e] border border-[#222] shadow-card space-y-4">
-          <h3 className="text-base font-bold text-white font-heading flex items-center justify-between">
+        <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm shadow-card space-y-4">
+          <h3 className="text-base font-bold text-slate-900 font-heading flex items-center justify-between">
             <span>General Contact Inquiries</span>
             <Link to="/admin/inquiries" className="text-xs text-gold-400 hover:underline">
               View All &rarr;
@@ -195,9 +195,9 @@ export const AdminDashboard: React.FC = () => {
           {stats?.recent_inquiries && stats.recent_inquiries.length > 0 ? (
             <div className="space-y-3">
               {stats.recent_inquiries.map((inq) => (
-                <div key={inq.id} className="p-3.5 rounded-xl bg-[#141414] border border-[#222] flex items-center justify-between text-xs">
+                <div key={inq.id} className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs">
                   <div>
-                    <p className="font-semibold text-white">{inq.full_name}</p>
+                    <p className="font-semibold text-slate-900">{inq.full_name}</p>
                     <p className="text-muted text-[11px] truncate max-w-xs">{inq.message}</p>
                   </div>
                   <span className="px-2 py-0.5 rounded bg-gold-500/10 text-gold-300 text-[10px] font-medium border border-gold-500/20">

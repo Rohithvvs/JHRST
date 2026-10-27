@@ -8,46 +8,59 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#050505',
+        background: '#F8FAFC',
         surface: {
-          DEFAULT: '#0D0D0D',
-          secondary: '#101010',
-          card: '#141414',
-          hover: '#1a1a1a',
+          DEFAULT: '#FFFFFF',
+          secondary: '#F1F5F9',
+          card: '#FFFFFF',
+          hover: '#F8FAFC',
         },
         gold: {
-          100: '#FDF7E7',
-          200: '#FAEEC3',
-          300: '#F5D76E', // Light gold
-          400: '#E4C14D',
-          500: '#D4AF37', // Primary gold
-          600: '#B89428',
-          700: '#94741B',
-          800: '#6E5513',
-          900: '#42330A',
+          100: '#E0F2FE', // Ice cyan/blue
+          200: '#BAE6FD', // Light sky
+          300: '#38BDF8', // Bright cyan accent (from card arrow & highlight)
+          400: '#00A6FB', // Vibrant electric blue
+          500: '#0267D6', // Primary royal blue (from card logo & contact icons)
+          600: '#0153B8', // Deep royal blue
+          700: '#014A96', // JHRST brand blue (from card logo text)
+          800: '#051349', // Card name deep midnight blue
+          900: '#081B36', // Right banner dark navy
+        },
+        brand: {
+          50: '#F0F9FF',
+          100: '#E0F2FE',
+          200: '#BAE6FD',
+          300: '#38BDF8',
+          400: '#00A6FB',
+          500: '#0267D6',
+          600: '#0153B8',
+          700: '#014A96',
+          800: '#051349',
+          900: '#081B36',
+          950: '#030A17',
         },
         border: {
-          DEFAULT: '#292929',
-          light: '#383838',
-          gold: 'rgba(212, 175, 55, 0.35)',
+          DEFAULT: '#E2E8F0',
+          light: '#F1F5F9',
+          gold: 'rgba(2, 103, 214, 0.25)',
         },
-        muted: '#A3A3A3',
+        muted: '#64748B',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         heading: ['"Space Grotesk"', 'sans-serif'],
       },
       backgroundImage: {
-        'gold-gradient': 'linear-gradient(135deg, #F5D76E 0%, #D4AF37 50%, #AA8C2C 100%)',
-        'gold-subtle': 'linear-gradient(180deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0) 100%)',
-        'card-gradient': 'linear-gradient(180deg, rgba(20, 20, 20, 0.95) 0%, rgba(13, 13, 13, 0.98) 100%)',
-        'dark-radial': 'radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.12) 0%, rgba(5, 5, 5, 0) 70%)',
+        'gold-gradient': 'linear-gradient(135deg, #00A6FB 0%, #0267D6 50%, #014A96 100%)',
+        'gold-subtle': 'linear-gradient(180deg, rgba(2, 103, 214, 0.08) 0%, rgba(2, 103, 214, 0) 100%)',
+        'card-gradient': 'linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%)',
+        'dark-radial': 'radial-gradient(circle at 50% 0%, rgba(2, 103, 214, 0.1) 0%, rgba(248, 250, 252, 0) 70%)',
       },
       boxShadow: {
-        'gold-sm': '0 2px 8px -2px rgba(212, 175, 55, 0.25)',
-        'gold-md': '0 4px 20px -2px rgba(212, 175, 55, 0.3)',
-        'gold-glow': '0 0 35px -5px rgba(212, 175, 55, 0.25)',
-        'card': '0 4px 24px -2px rgba(0, 0, 0, 0.6)',
+        'gold-sm': '0 2px 8px -2px rgba(2, 103, 214, 0.2)',
+        'gold-md': '0 8px 24px -4px rgba(2, 103, 214, 0.25)',
+        'gold-glow': '0 0 30px -5px rgba(2, 103, 214, 0.22)',
+        'card': '0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04)',
       },
       animation: {
         'pulse-subtle': 'pulseSubtle 4s ease-in-out infinite',

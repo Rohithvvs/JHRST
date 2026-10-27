@@ -29,7 +29,7 @@ export const AboutPreview: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 relative bg-[#050505] overflow-hidden">
+    <section className="py-24 relative bg-[#F8FAFC] overflow-hidden">
       {/* Background ambient light */}
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-gold-500/[0.04] rounded-full blur-[140px] pointer-events-none" />
 
@@ -48,27 +48,27 @@ export const AboutPreview: React.FC = () => {
               <Reveal key={card.title} delay={idx * 0.1} className="h-full">
                 <TiltCard className="relative flex h-full flex-col justify-between p-8 rounded-2xl glass-card glass-card-glow group">
                 <div>
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-500/15 to-transparent border border-gold-500/30 flex items-center justify-center text-gold-300 mb-6 group-hover:scale-105 group-hover:border-gold-400/60 transition-all duration-300 shadow-[0_0_15px_-3px_rgba(212,175,55,0.15)]">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100/50 border border-blue-200 flex items-center justify-center text-blue-600 shadow-sm mb-6 group-hover:scale-105 group-hover:border-gold-400/60 transition-all duration-300 shadow-[0_0_15px_-3px_rgba(212,175,55,0.15)]">
                     <Icon className="w-7 h-7" />
                   </div>
 
-                  <h3 className="text-2xl font-bold text-white mb-2 font-heading group-hover:text-gold-200 transition-colors">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-2 font-heading group-hover:text-blue-600 transition-colors">
                     {card.title}
                   </h3>
 
-                  <p className="text-xs uppercase tracking-wider text-gold-400 font-mono font-medium mb-4">
+                  <p className="text-xs uppercase tracking-wider text-blue-600 font-mono font-semibold mb-4">
                     {card.highlight}
                   </p>
 
-                  <p className="text-sm text-gray-300 leading-relaxed">
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     {card.description}
                   </p>
                 </div>
 
                 {/* Subtle bottom gold glow */}
-                <div className="mt-8 pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs text-gray-400">
-                  <span className="font-mono text-gold-400/80">Pillar 0{idx + 1}</span>
-                  <span className="text-white/40 group-hover:text-gold-300 transition-colors">&rarr;</span>
+                <div className="mt-8 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                  <span className="font-mono text-blue-600/90 font-medium">Pillar 0{idx + 1}</span>
+                  <span className="text-slate-400 group-hover:text-blue-600 transition-colors">&rarr;</span>
                 </div>
                 </TiltCard>
               </Reveal>

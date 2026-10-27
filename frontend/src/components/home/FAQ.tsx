@@ -61,7 +61,7 @@ export const FAQ: React.FC = () => {
   };
 
   return (
-    <section className="py-24 relative bg-[#050505] overflow-hidden">
+    <section className="py-24 relative bg-[#F8FAFC] overflow-hidden">
       {/* Background ambient light */}
       <div className="absolute top-1/2 right-1/4 w-[400px] h-[400px] bg-gold-500/[0.04] rounded-full blur-[120px] pointer-events-none" />
 
@@ -85,8 +85,8 @@ export const FAQ: React.FC = () => {
                 transition={{ duration: 0.35, delay: index * 0.05 }}
                 className={`rounded-2xl transition-all duration-300 overflow-hidden ${
                   isOpen
-                    ? 'glass-card border-gold-500/50 shadow-gold-sm'
-                    : 'bg-[#0d0d0d] border border-white/[0.06] hover:border-gold-500/30'
+                    ? 'bg-white border-blue-400 shadow-md'
+                    : 'bg-white border border-slate-200 hover:border-blue-400/60 shadow-sm'
                 }`}
               >
                 <button
@@ -95,14 +95,14 @@ export const FAQ: React.FC = () => {
                   className="w-full py-5 px-6 flex items-center justify-between text-left focus:outline-none"
                   aria-expanded={isOpen}
                 >
-                  <span className={`text-base font-semibold font-heading pr-4 transition-colors ${isOpen ? 'text-gold-200' : 'text-white'}`}>
+                  <span className={`text-base font-semibold font-heading pr-4 transition-colors ${isOpen ? 'text-blue-700' : 'text-slate-900'}`}>
                     {faq.question}
                   </span>
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
                       isOpen
-                        ? 'bg-gold-500/20 text-gold-300 rotate-180 border border-gold-500/40'
-                        : 'bg-[#181818] text-gray-400 border border-white/[0.06]'
+                        ? 'bg-blue-50 text-blue-600 rotate-180 border border-blue-200'
+                        : 'bg-slate-100 text-slate-500 border border-slate-200'
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />
@@ -123,7 +123,7 @@ export const FAQ: React.FC = () => {
                         animate={{ rotateX: 0, y: 0 }}
                         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                         style={{ transformPerspective: 800, transformOrigin: 'top center' }}
-                        className="px-6 pb-6 text-sm text-gray-300 leading-relaxed border-t border-white/[0.06] pt-4"
+                        className="px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4"
                       >
                         {faq.answer}
                       </motion.div>
@@ -136,14 +136,14 @@ export const FAQ: React.FC = () => {
         </div>
 
         {/* Direct Contact Shortcut Pill */}
-        <div className="mt-12 p-6 rounded-2xl glass-card border border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        <div className="mt-12 p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-gold-500/15 border border-gold-500/30 flex items-center justify-center text-gold-300 shrink-0">
               <HelpCircle className="w-5 h-5" />
             </div>
             <div>
-              <p className="text-sm font-semibold text-white">Have a specific question?</p>
-              <p className="text-xs text-gray-400">Our engineering leads in Bengaluru are ready to help.</p>
+              <p className="text-sm font-semibold text-slate-900">Have a specific question?</p>
+              <p className="text-xs text-slate-500">Our engineering leads in Bengaluru are ready to help.</p>
             </div>
           </div>
           <Link to="/contact">

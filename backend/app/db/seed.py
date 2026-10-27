@@ -502,7 +502,7 @@ def seed_database():
                 {"key": "company_name", "value": "JHRST Tech Solutions", "category": "brand"},
                 {"key": "tagline", "value": "BUILD. INNOVATE. GROW.", "category": "brand"},
                 {"key": "email", "value": "jhrst9966@gmail.com", "category": "contact"},
-                {"key": "phone", "value": "+91 8886315136", "category": "contact"},
+                {"key": "phone", "value": "+91 99662 84338", "category": "contact"},
                 {"key": "address", "value": "Bengaluru, Karnataka, India – 560068", "category": "contact"},
                 {"key": "business_hours", "value": "Monday - Saturday: 9:00 AM - 6:00 PM IST", "category": "contact"},
                 {"key": "linkedin_url", "value": "https://linkedin.com/company/jhrst-tech-solutions", "category": "social"},
@@ -516,7 +516,7 @@ def seed_database():
             # Update existing website settings with the verified contact details
             updates = {
                 "email": "jhrst9966@gmail.com",
-                "phone": "+91 8886315136",
+                "phone": "+91 99662 84338",
                 "address": "Bengaluru, Karnataka, India – 560068",
                 "business_hours": "Monday - Saturday: 9:00 AM - 6:00 PM IST"
             }

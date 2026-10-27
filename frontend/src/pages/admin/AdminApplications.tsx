@@ -73,7 +73,7 @@ export const AdminApplications: React.FC = () => {
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
           <Badge variant="gold">TALENT RECRUITMENT</Badge>
-          <h1 className="text-2xl font-bold font-heading text-white mt-1">
+          <h1 className="text-2xl font-bold font-heading text-slate-900 mt-1">
             Candidate Applications ({applications.length})
           </h1>
           <p className="text-xs text-muted">
@@ -91,8 +91,8 @@ export const AdminApplications: React.FC = () => {
           <div className="w-8 h-8 border-2 border-gold-500 border-t-transparent rounded-full animate-spin" />
         </div>
       ) : applications.length === 0 ? (
-        <div className="p-10 text-center rounded-2xl bg-[#0e0e0e] border border-[#222]">
-          <p className="text-sm text-gray-400">No applications submitted yet.</p>
+        <div className="p-10 text-center rounded-2xl bg-white border border-slate-200 shadow-sm">
+          <p className="text-sm text-slate-500">No applications submitted yet.</p>
           <p className="text-xs text-muted mt-1">Incoming resumes submitted through /careers will display here.</p>
         </div>
       ) : (
@@ -100,19 +100,19 @@ export const AdminApplications: React.FC = () => {
           {applications.map((app) => (
             <div
               key={app.id}
-              className="p-6 rounded-2xl bg-[#0e0e0e] border border-[#242424] shadow-card space-y-4"
+              className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm shadow-card space-y-4"
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#1c1c1c] pb-3">
                 <div>
                   <div className="flex items-center gap-3">
-                    <h3 className="text-base font-bold text-white font-heading">
+                    <h3 className="text-base font-bold text-slate-900 font-heading">
                       {app.full_name}
                     </h3>
                     <span className="text-xs px-2.5 py-0.5 rounded bg-gold-500/10 text-gold-300 border border-gold-500/20 font-medium">
                       {app.job_title}
                     </span>
                   </div>
-                  <div className="flex flex-wrap items-center gap-3 text-xs text-gray-400 mt-1">
+                  <div className="flex flex-wrap items-center gap-3 text-xs text-slate-500 mt-1">
                     <span>Level: {app.experience_level}</span>
                     <span>&bull;</span>
                     <a href={`mailto:${app.email}`} className="text-gold-400 hover:underline">
@@ -132,7 +132,7 @@ export const AdminApplications: React.FC = () => {
                   <select
                     value={app.status}
                     onChange={(e) => handleStatusChange(app.id, e.target.value)}
-                    className="bg-[#181818] border border-[#2b2b2b] text-xs text-gold-300 rounded-lg px-2.5 py-1 focus:outline-none"
+                    className="bg-slate-50 border border-slate-200 text-xs text-blue-700 font-semibold rounded-lg px-2.5 py-1 focus:outline-none"
                   >
                     <option value="Received">Received</option>
                     <option value="Under Review">Under Review</option>
@@ -148,7 +148,7 @@ export const AdminApplications: React.FC = () => {
                 <p className="text-xs uppercase tracking-wider text-muted font-semibold mb-1">
                   Core Skills:
                 </p>
-                <p className="text-xs text-gray-200 bg-[#141414] p-3 rounded-lg border border-[#202020]">
+                <p className="text-xs text-slate-700 bg-slate-50 p-3 rounded-lg border border-slate-200">
                   {app.relevant_skills}
                 </p>
               </div>
@@ -158,7 +158,7 @@ export const AdminApplications: React.FC = () => {
                   <p className="text-xs uppercase tracking-wider text-muted font-semibold mb-1">
                     Candidate Note:
                   </p>
-                  <p className="text-xs text-gray-300 bg-[#141414] p-3 rounded-lg border border-[#202020]">
+                  <p className="text-xs text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-200">
                     {app.message}
                   </p>
                 </div>
@@ -180,7 +180,7 @@ export const AdminApplications: React.FC = () => {
                       href={app.linkedin_url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs text-gray-400 hover:text-gold-300 flex items-center gap-1"
+                      className="text-xs text-slate-500 hover:text-gold-300 flex items-center gap-1"
                     >
                       <LinkedinIcon className="w-3.5 h-3.5" />
                       <span>LinkedIn</span>
@@ -192,7 +192,7 @@ export const AdminApplications: React.FC = () => {
                       href={app.github_url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs text-gray-400 hover:text-gold-300 flex items-center gap-1"
+                      className="text-xs text-slate-500 hover:text-gold-300 flex items-center gap-1"
                     >
                       <GithubIcon className="w-3.5 h-3.5" />
                       <span>GitHub</span>

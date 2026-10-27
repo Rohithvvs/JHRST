@@ -93,7 +93,7 @@ export const HeroVisual: React.FC = () => {
     let height = 0;
     let running = true;
 
-    const gold = ['#FFF4D0', '#F5D76E', '#D4AF37', '#E4C14D', '#FFFFFF'];
+    const gold = ['#0267D6', '#00A6FB', '#014A96', '#0284C7', '#38BDF8'];
     const particles: {
       x: number;
       y: number;
@@ -165,9 +165,9 @@ export const HeroVisual: React.FC = () => {
       const spinZ = time * 0.18;
 
       const glow = ctx.createRadialGradient(centerX, centerY, 8, centerX, centerY, 230);
-      glow.addColorStop(0, 'rgba(212, 175, 55, 0.28)');
-      glow.addColorStop(0.42, 'rgba(212, 175, 55, 0.08)');
-      glow.addColorStop(1, 'rgba(5, 5, 5, 0)');
+      glow.addColorStop(0, 'rgba(2, 103, 214, 0.12)');
+      glow.addColorStop(0.42, 'rgba(56, 189, 248, 0.04)');
+      glow.addColorStop(1, 'rgba(248, 250, 252, 0)');
       ctx.fillStyle = glow;
       ctx.beginPath();
       ctx.arc(centerX, centerY, 230, 0, Math.PI * 2);
@@ -195,9 +195,9 @@ export const HeroVisual: React.FC = () => {
         }
       };
 
-      drawRing(168, spinX * 0.35 + 1.05, spinY * 0.2, 'rgba(212, 175, 55, ALPHA)');
-      drawRing(132, -spinX * 0.28 + 0.4, spinY * 0.45 + 0.8, 'rgba(245, 215, 110, ALPHA)');
-      drawRing(198, 1.25, time * 0.2 + smoothMX, 'rgba(255, 255, 255, ALPHA)');
+      drawRing(168, spinX * 0.35 + 1.05, spinY * 0.2, 'rgba(2, 103, 214, ALPHA)');
+      drawRing(132, -spinX * 0.28 + 0.4, spinY * 0.45 + 0.8, 'rgba(56, 189, 248, ALPHA)');
+      drawRing(198, 1.25, time * 0.2 + smoothMX, 'rgba(100, 116, 139, ALPHA)');
 
       for (const particle of particles) {
         if (!reduce) {
@@ -226,7 +226,7 @@ export const HeroVisual: React.FC = () => {
             ctx.beginPath();
             ctx.moveTo(projected[i].sx, projected[i].sy);
             ctx.lineTo(projected[j].sx, projected[j].sy);
-            ctx.strokeStyle = `rgba(212, 175, 55, ${alpha})`;
+            ctx.strokeStyle = `rgba(2, 103, 214, ${alpha * 0.7})`;
             ctx.lineWidth = 0.8;
             ctx.stroke();
           }
@@ -283,9 +283,9 @@ export const HeroVisual: React.FC = () => {
         ctx.lineTo(b.sx, b.sy);
         ctx.lineTo(c.sx, c.sy);
         ctx.closePath();
-        ctx.fillStyle = `rgba(212, 175, 55, ${0.05 + face.light * 0.16})`;
+        ctx.fillStyle = `rgba(2, 103, 214, ${0.04 + face.light * 0.12})`;
         ctx.fill();
-        ctx.strokeStyle = `rgba(255, 236, 176, ${0.25 + face.light * 0.55})`;
+        ctx.strokeStyle = `rgba(2, 103, 214, ${0.2 + face.light * 0.4})`;
         ctx.lineWidth = 1.15;
         ctx.stroke();
       }
@@ -293,7 +293,7 @@ export const HeroVisual: React.FC = () => {
       for (const point of screen) {
         ctx.beginPath();
         ctx.arc(point.sx, point.sy, Math.max(1.2, 2.4 * point.scale), 0, Math.PI * 2);
-        ctx.fillStyle = '#FFF6D1';
+        ctx.fillStyle = '#0267D6';
         ctx.fill();
       }
 
@@ -350,17 +350,17 @@ export const HeroVisual: React.FC = () => {
         <motion.div
           animate={reduce ? undefined : { y: [0, -8, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-          className="glass-card rounded-xl px-4 py-3 border border-gold-500/30 shadow-card flex items-center gap-3"
+          className="bg-white rounded-xl px-4 py-3 border border-slate-200 shadow-md flex items-center gap-3"
         >
-          <div className="w-8 h-8 rounded-lg bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+          <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600">
             <Activity className="w-4 h-4" />
           </div>
           <div>
             <div className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-              <p className="text-[10px] uppercase tracking-wider text-gray-400 font-mono">System Active</p>
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
+              <p className="text-[10px] uppercase tracking-wider text-slate-500 font-mono">System Active</p>
             </div>
-            <p className="text-xs font-semibold text-white">99.98% High Availability</p>
+            <p className="text-xs font-semibold text-slate-900">99.98% High Availability</p>
           </div>
         </motion.div>
       </motion.div>
@@ -372,14 +372,14 @@ export const HeroVisual: React.FC = () => {
         <motion.div
           animate={reduce ? undefined : { y: [0, -9, 0] }}
           transition={{ duration: 6.5, repeat: Infinity, ease: 'easeInOut', delay: 1.2 }}
-          className="glass-card rounded-xl px-4 py-3 border border-gold-500/30 shadow-card flex items-center gap-3"
+          className="bg-white rounded-xl px-4 py-3 border border-slate-200 shadow-md flex items-center gap-3"
         >
-          <div className="w-8 h-8 rounded-lg bg-gold-500/15 border border-gold-500/40 flex items-center justify-center text-gold-300">
+          <div className="w-8 h-8 rounded-lg bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600">
             <Zap className="w-4 h-4" />
           </div>
           <div>
-            <p className="text-[10px] uppercase tracking-wider text-gold-400/90 font-mono">Inference Engine</p>
-            <p className="text-xs font-semibold text-white font-heading">Sub-50ms Latency</p>
+            <p className="text-[10px] uppercase tracking-wider text-blue-600 font-mono font-semibold">Inference Engine</p>
+            <p className="text-xs font-semibold text-slate-900 font-heading">Sub-50ms Latency</p>
           </div>
         </motion.div>
       </motion.div>
@@ -388,11 +388,11 @@ export const HeroVisual: React.FC = () => {
         style={{ x: cardCX, rotateY: tiltY, transformPerspective: 700 }}
         className="hidden sm:flex absolute top-[46%] right-0 z-10"
       >
-        <div className="glass-card rounded-lg px-3 py-1.5 border border-white/10 flex items-center gap-2 text-[11px] text-gray-300">
-          <Cpu className="w-3.5 h-3.5 text-gold-400" />
-          <span className="font-mono text-gold-300">FastAPI</span>
+        <div className="bg-white rounded-lg px-3 py-1.5 border border-slate-200 shadow-sm flex items-center gap-2 text-[11px] text-slate-700">
+          <Cpu className="w-3.5 h-3.5 text-blue-600" />
+          <span className="font-mono text-blue-700 font-semibold">FastAPI</span>
           <span className="text-gray-500">&bull;</span>
-          <span className="font-mono text-white">React 19</span>
+          <span className="font-mono text-slate-900 font-semibold">React 19</span>
         </div>
       </motion.div>
 

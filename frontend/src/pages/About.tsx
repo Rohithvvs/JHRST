@@ -70,59 +70,59 @@ export const About: React.FC = () => {
   return (
     <div className="pt-28 pb-20">
       {/* Hero Header */}
-      <section className="relative py-16 md:py-24 border-b border-[#1c1c1c] overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-gold-500/10 rounded-full blur-[130px] pointer-events-none" />
+      <section className="relative py-16 md:py-24 border-b border-slate-200 overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-blue-500/10 rounded-full blur-[130px] pointer-events-none" />
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <Badge variant="gold" className="mb-4">
             ABOUT JHRST TECH SOLUTIONS
           </Badge>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight font-heading mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-tight font-heading mb-6">
             Technology with Purpose.{' '}
             <span className="text-gold-gradient">Innovation with Impact.</span>
           </h1>
-          <p className="text-base sm:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto font-normal">
+          <p className="text-base sm:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-normal">
             JHRST Tech Solutions is focused on developing practical digital solutions through modern software engineering, artificial intelligence, automation, and user-centered product design.
           </p>
         </div>
       </section>
 
       {/* Mission, Vision, Approach Grid */}
-      <section className="py-20 bg-[#080808]">
+      <section className="py-20 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <TiltCard className="p-8 rounded-2xl glass-card glass-card-glow">
-              <div className="w-14 h-14 rounded-2xl bg-gold-500/15 border border-gold-500/30 flex items-center justify-center text-gold-300 mb-6 shadow-gold-sm">
+              <div className="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 mb-6 shadow-sm">
                 <Target className="w-7 h-7" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3 font-heading">
+              <h3 className="text-2xl font-bold text-slate-900 mb-3 font-heading">
                 Our Mission
               </h3>
-              <p className="text-sm text-gray-300 leading-relaxed">
+              <p className="text-sm text-slate-600 leading-relaxed">
                 To build reliable, accessible, and innovative technology solutions that solve real-world problems and help organizations grow sustainably.
               </p>
             </TiltCard>
 
             <TiltCard className="p-8 rounded-2xl glass-card glass-card-glow">
-              <div className="w-14 h-14 rounded-2xl bg-gold-500/15 border border-gold-500/30 flex items-center justify-center text-gold-300 mb-6 shadow-gold-sm">
+              <div className="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 mb-6 shadow-sm">
                 <Compass className="w-7 h-7" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3 font-heading">
+              <h3 className="text-2xl font-bold text-slate-900 mb-3 font-heading">
                 Our Vision
               </h3>
-              <p className="text-sm text-gray-300 leading-relaxed">
+              <p className="text-sm text-slate-600 leading-relaxed">
                 To help businesses and individuals embrace modern technology to create smarter, more connected, and more efficient digital experiences.
               </p>
             </TiltCard>
 
             <TiltCard className="p-8 rounded-2xl glass-card glass-card-glow">
-              <div className="w-14 h-14 rounded-2xl bg-gold-500/15 border border-gold-500/30 flex items-center justify-center text-gold-300 mb-6 shadow-gold-sm">
+              <div className="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 mb-6 shadow-sm">
                 <Zap className="w-7 h-7" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3 font-heading">
+              <h3 className="text-2xl font-bold text-slate-900 mb-3 font-heading">
                 Our Approach
               </h3>
-              <p className="text-sm text-gray-300 leading-relaxed">
+              <p className="text-sm text-slate-600 leading-relaxed">
                 We combine thoughtful planning, modern engineering, continuous improvement, and user-focused design to deliver meaningful digital products.
               </p>
             </TiltCard>
@@ -131,7 +131,7 @@ export const About: React.FC = () => {
       </section>
 
       {/* Core Company Values */}
-      <section className="py-20 bg-[#050505]">
+      <section className="py-20 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="OUR CORE VALUES"
@@ -148,13 +148,13 @@ export const About: React.FC = () => {
                   key={val.title}
                   className="h-full p-6 rounded-2xl glass-card glass-card-glow"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/25 flex items-center justify-center text-gold-400 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 mb-4 shadow-sm">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h4 className="text-lg font-bold text-white mb-2 font-heading">
+                  <h4 className="text-lg font-bold text-slate-900 mb-2 font-heading">
                     {val.title}
                   </h4>
-                  <p className="text-xs text-gray-300 leading-relaxed">
+                  <p className="text-xs text-slate-600 leading-relaxed">
                     {val.desc}
                   </p>
                 </TiltCard>
@@ -165,7 +165,7 @@ export const About: React.FC = () => {
       </section>
 
       {/* Industries We Support */}
-      <section className="py-20 bg-[#090909] border-t border-[#1a1a1a]">
+      <section className="py-20 bg-[#F1F5F9] border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="TARGET VERTICALS"
@@ -180,16 +180,16 @@ export const About: React.FC = () => {
               return (
                 <div
                   key={ind.name}
-                  className="p-6 rounded-2xl bg-[#121212] border border-[#242424] shadow-card flex items-start gap-4"
+                  className="p-6 rounded-2xl bg-white border border-slate-200 shadow-card flex items-start gap-4"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/20 flex items-center justify-center text-gold-400 shrink-0 mt-0.5">
+                  <div className="w-10 h-10 rounded-lg bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 shrink-0 mt-0.5 shadow-sm">
                     <Icon className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-white font-heading mb-1">
+                    <h4 className="text-base font-bold text-slate-900 font-heading mb-1">
                       {ind.name}
                     </h4>
-                    <p className="text-xs text-gray-300 leading-relaxed">
+                    <p className="text-xs text-slate-600 leading-relaxed">
                       {ind.desc}
                     </p>
                   </div>
@@ -205,11 +205,11 @@ export const About: React.FC = () => {
 
       {/* CTA Box */}
       <section className="pt-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="p-10 rounded-3xl bg-gradient-to-b from-[#141414] to-[#0c0c0c] border border-gold-500/30 shadow-card">
-          <h3 className="text-2xl sm:text-3xl font-bold text-white font-heading mb-4">
+        <div className="p-10 rounded-3xl bg-white border border-blue-200 shadow-md shadow-card">
+          <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 font-heading mb-4">
             Ready to Build With JHRST?
           </h3>
-          <p className="text-sm text-gray-300 max-w-xl mx-auto mb-8">
+          <p className="text-sm text-slate-600 max-w-xl mx-auto mb-8">
             Tell us about your project or technology needs. We will review your inquiry and discuss practical steps forward.
           </p>
           <Link to="/contact">

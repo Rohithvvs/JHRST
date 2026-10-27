@@ -206,7 +206,7 @@ Builds cleanly with exit code 0 and code-split production bundles.
 - **HTTP Headers**: Security headers (`X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, `X-XSS-Protection: 1; mode=block`, `Referrer-Policy: strict-origin-when-cross-origin`) applied on all responses.
 - **CORS**: Domain allowlisting configured via environment settings.
 - **Verified Company Details**:
-  - **Phone**: `+91 8886315136`
+  - **Phone**: `+91 99662 84338`
   - **Email**: `jhrst9966@gmail.com`
   - **Website**: `https://jhrst.vercel.app/` / `www.jhrsttech.com`
   - **Address**: `Bengaluru, Karnataka, India – 560068`

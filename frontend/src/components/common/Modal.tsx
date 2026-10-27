@@ -6,7 +6,7 @@ interface ModalProps {
   onClose: () => void;
   title?: string;
   children: React.ReactNode;
-  maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl';
+  maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 }
 
 export const Modal: React.FC<ModalProps> = ({
@@ -14,16 +14,18 @@ export const Modal: React.FC<ModalProps> = ({
   onClose,
   title,
   children,
-  maxWidth = '2xl',
+  maxWidth = 'md',
 }) => {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
     };
+
     if (isOpen) {
       document.body.style.overflow = 'hidden';
       window.addEventListener('keydown', handleKeyDown);
     }
+
     return () => {
       document.body.style.overflow = 'unset';
       window.removeEventListener('keydown', handleKeyDown);
@@ -38,36 +40,39 @@ export const Modal: React.FC<ModalProps> = ({
     lg: 'max-w-lg',
     xl: 'max-w-xl',
     '2xl': 'max-w-2xl',
-    '3xl': 'max-w-3xl',
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div
+      className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 min-h-screen"
+      role="dialog"
+      aria-modal="true"
+    >
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black/85 backdrop-blur-md transition-opacity"
+        className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity"
         onClick={onClose}
         aria-hidden="true"
       />
 
       {/* Modal Dialog Content */}
       <div
-        className={`relative w-full ${widthClasses[maxWidth]} bg-[#101010] border border-[#292929] rounded-2xl shadow-2xl p-6 sm:p-8 z-10 my-8 overflow-hidden`}
+        className={`relative w-full ${widthClasses[maxWidth]} bg-white border border-slate-200 rounded-2xl shadow-2xl p-6 sm:p-8 z-10 my-8 overflow-hidden`}
         role="dialog"
         aria-modal="true"
       >
-        {/* Subtle top gold accent line */}
-        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-80" />
+        {/* Subtle top brand accent line */}
+        <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[#0267D6] to-transparent opacity-90" />
 
-        <div className="flex items-center justify-between pb-4 border-b border-[#292929] mb-6">
+        <div className="flex items-center justify-between pb-4 border-b border-slate-200 mb-6">
           {title ? (
-            <h3 className="text-xl font-bold text-white font-heading">{title}</h3>
+            <h3 className="text-xl font-bold text-slate-900 font-heading">{title}</h3>
           ) : (
             <div />
           )}
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors focus:outline-none focus:ring-2 focus:ring-gold-500/40"
+            className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/40"
             aria-label="Close dialog"
           >
             <X className="w-5 h-5" />
@@ -79,4 +84,3 @@ export const Modal: React.FC<ModalProps> = ({
     </div>
   );
 };
-

@@ -50,21 +50,21 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
             key={t.id}
             className={`pointer-events-auto flex items-start gap-3 p-4 rounded-xl border shadow-xl backdrop-blur-md transition-all duration-300 animate-slide-up ${
               t.type === 'success'
-                ? 'bg-[#141414]/95 border-emerald-500/40 text-emerald-200'
+                ? 'bg-white border-emerald-300 text-emerald-800 shadow-xl'
                 : t.type === 'error'
-                ? 'bg-[#141414]/95 border-red-500/40 text-red-200'
-                : 'bg-[#141414]/95 border-gold-500/40 text-gold-200'
+                ? 'bg-white border-red-300 text-red-800 shadow-xl'
+                : 'bg-white border-blue-300 text-blue-800 shadow-xl'
             }`}
           >
-            {t.type === 'success' && <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />}
-            {t.type === 'error' && <AlertCircle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />}
-            {t.type === 'info' && <Info className="w-5 h-5 text-gold-400 shrink-0 mt-0.5" />}
+            {t.type === 'success' && <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />}
+            {t.type === 'error' && <AlertCircle className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />}
+            {t.type === 'info' && <Info className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />}
             
             <p className="text-sm font-medium leading-relaxed flex-1 text-white">{t.message}</p>
 
             <button
               onClick={() => removeToast(t.id)}
-              className="text-gray-400 hover:text-white transition-colors"
+              className="text-slate-400 hover:text-slate-700 transition-colors"
             >
               <X className="w-4 h-4" />
             </button>

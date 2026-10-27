@@ -26,7 +26,7 @@ export const AdminContent: React.FC = () => {
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
           <Badge variant="gold">WEBSITE CONTENT MANAGER</Badge>
-          <h1 className="text-2xl font-bold font-heading text-white mt-1">
+          <h1 className="text-2xl font-bold font-heading text-slate-900 mt-1">
             Publishing &amp; Records Management
           </h1>
           <p className="text-xs text-muted">
@@ -42,7 +42,7 @@ export const AdminContent: React.FC = () => {
           className={`pb-3 px-4 text-xs font-semibold tracking-wider whitespace-nowrap transition-colors border-b-2 ${
             activeTab === 'services'
               ? 'border-gold-400 text-gold-300'
-              : 'border-transparent text-gray-400 hover:text-white'
+              : 'border-transparent text-slate-500 hover:text-slate-900'
           }`}
         >
           Services ({services.length})
@@ -52,7 +52,7 @@ export const AdminContent: React.FC = () => {
           className={`pb-3 px-4 text-xs font-semibold tracking-wider whitespace-nowrap transition-colors border-b-2 ${
             activeTab === 'projects'
               ? 'border-gold-400 text-gold-300'
-              : 'border-transparent text-gray-400 hover:text-white'
+              : 'border-transparent text-slate-500 hover:text-slate-900'
           }`}
         >
           Portfolio Projects ({projects.length})
@@ -62,7 +62,7 @@ export const AdminContent: React.FC = () => {
           className={`pb-3 px-4 text-xs font-semibold tracking-wider whitespace-nowrap transition-colors border-b-2 ${
             activeTab === 'products'
               ? 'border-gold-400 text-gold-300'
-              : 'border-transparent text-gray-400 hover:text-white'
+              : 'border-transparent text-slate-500 hover:text-slate-900'
           }`}
         >
           AI Products ({products.length})
@@ -72,7 +72,7 @@ export const AdminContent: React.FC = () => {
           className={`pb-3 px-4 text-xs font-semibold tracking-wider whitespace-nowrap transition-colors border-b-2 ${
             activeTab === 'jobs'
               ? 'border-gold-400 text-gold-300'
-              : 'border-transparent text-gray-400 hover:text-white'
+              : 'border-transparent text-slate-500 hover:text-slate-900'
           }`}
         >
           Careers ({jobs.length})
@@ -83,9 +83,9 @@ export const AdminContent: React.FC = () => {
       {activeTab === 'services' && (
         <div className="space-y-3">
           {services.map((s) => (
-            <div key={s.slug} className="p-4 rounded-xl bg-[#0e0e0e] border border-[#222] flex items-center justify-between text-xs">
+            <div key={s.slug} className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-between text-xs">
               <div>
-                <p className="font-bold text-white text-sm">{s.title}</p>
+                <p className="font-bold text-slate-900 text-sm">{s.title}</p>
                 <p className="text-muted text-[11px] mt-0.5">{s.short_description}</p>
               </div>
               <div className="flex items-center gap-3">
@@ -101,9 +101,9 @@ export const AdminContent: React.FC = () => {
       {activeTab === 'projects' && (
         <div className="space-y-3">
           {projects.map((p) => (
-            <div key={p.slug} className="p-4 rounded-xl bg-[#0e0e0e] border border-[#222] flex items-center justify-between text-xs">
+            <div key={p.slug} className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-between text-xs">
               <div>
-                <p className="font-bold text-white text-sm">{p.title}</p>
+                <p className="font-bold text-slate-900 text-sm">{p.title}</p>
                 <p className="text-gold-400 text-[11px] mt-0.5">{p.category} &bull; Status: {p.status}</p>
               </div>
               <div className="flex items-center gap-2">
@@ -119,9 +119,9 @@ export const AdminContent: React.FC = () => {
       {activeTab === 'products' && (
         <div className="space-y-3">
           {products.map((prod) => (
-            <div key={prod.slug} className="p-4 rounded-xl bg-[#0e0e0e] border border-[#222] flex items-center justify-between text-xs">
+            <div key={prod.slug} className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-between text-xs">
               <div>
-                <p className="font-bold text-white text-sm">{prod.title}</p>
+                <p className="font-bold text-slate-900 text-sm">{prod.title}</p>
                 <p className="text-muted text-[11px] mt-0.5">{prod.category} &bull; Status: {prod.status}</p>
               </div>
               <div className="flex items-center gap-2">
@@ -137,9 +137,9 @@ export const AdminContent: React.FC = () => {
       {activeTab === 'jobs' && (
         <div className="space-y-3">
           {jobs.map((j) => (
-            <div key={j.slug} className="p-4 rounded-xl bg-[#0e0e0e] border border-[#222] flex items-center justify-between text-xs">
+            <div key={j.slug} className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-between text-xs">
               <div>
-                <p className="font-bold text-white text-sm">{j.title}</p>
+                <p className="font-bold text-slate-900 text-sm">{j.title}</p>
                 <p className="text-gold-400 text-[11px] mt-0.5">{j.department} &bull; {j.employment_type} &bull; {j.location}</p>
               </div>
               <div className="flex items-center gap-2">

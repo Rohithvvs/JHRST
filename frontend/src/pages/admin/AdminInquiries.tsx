@@ -58,7 +58,7 @@ export const AdminInquiries: React.FC = () => {
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
           <Badge variant="gold">COMMUNICATION PIPELINE</Badge>
-          <h1 className="text-2xl font-bold font-heading text-white mt-1">
+          <h1 className="text-2xl font-bold font-heading text-slate-900 mt-1">
             Client Inquiries Review
           </h1>
           <p className="text-xs text-muted">
@@ -80,7 +80,7 @@ export const AdminInquiries: React.FC = () => {
           className={`pb-3 px-4 text-xs font-semibold tracking-wider transition-colors border-b-2 ${
             activeTab === 'project'
               ? 'border-gold-400 text-gold-300'
-              : 'border-transparent text-gray-400 hover:text-white'
+              : 'border-transparent text-slate-500 hover:text-slate-900'
           }`}
         >
           Project Inquiries ({projectInquiries.length})
@@ -90,7 +90,7 @@ export const AdminInquiries: React.FC = () => {
           className={`pb-3 px-4 text-xs font-semibold tracking-wider transition-colors border-b-2 ${
             activeTab === 'contact'
               ? 'border-gold-400 text-gold-300'
-              : 'border-transparent text-gray-400 hover:text-white'
+              : 'border-transparent text-slate-500 hover:text-slate-900'
           }`}
         >
           General Contact ({contactInquiries.length})
@@ -104,19 +104,19 @@ export const AdminInquiries: React.FC = () => {
       ) : activeTab === 'project' ? (
         <div className="space-y-4">
           {projectInquiries.length === 0 ? (
-            <div className="p-8 text-center rounded-2xl bg-[#0f0f0f] border border-[#222]">
-              <p className="text-xs text-gray-400">No project inquiries recorded yet.</p>
+            <div className="p-8 text-center rounded-2xl bg-white border border-slate-200 shadow-sm">
+              <p className="text-xs text-slate-500">No project inquiries recorded yet.</p>
             </div>
           ) : (
             projectInquiries.map((inq) => (
               <div
                 key={inq.id}
-                className="p-6 rounded-2xl bg-[#0e0e0e] border border-[#242424] shadow-card space-y-4"
+                className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm shadow-card space-y-4"
               >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#1c1c1c] pb-3">
                   <div>
                     <div className="flex items-center gap-3">
-                      <h3 className="text-base font-bold text-white font-heading">
+                      <h3 className="text-base font-bold text-slate-900 font-heading">
                         {inq.full_name}
                       </h3>
                       {inq.company_name && (
@@ -126,7 +126,7 @@ export const AdminInquiries: React.FC = () => {
                         </span>
                       )}
                     </div>
-                    <div className="flex flex-wrap items-center gap-3 text-xs text-gray-400 mt-1">
+                    <div className="flex flex-wrap items-center gap-3 text-xs text-slate-500 mt-1">
                       <span className="text-gold-400 font-medium">{inq.service_required}</span>
                       <span>&bull;</span>
                       <span>Budget: {inq.estimated_budget || 'Flexible'}</span>
@@ -140,7 +140,7 @@ export const AdminInquiries: React.FC = () => {
                     <select
                       value={inq.status}
                       onChange={(e) => handleUpdateProjectStatus(inq.id, e.target.value)}
-                      className="bg-[#181818] border border-[#2b2b2b] text-xs text-gold-300 rounded-lg px-2.5 py-1 focus:outline-none"
+                      className="bg-slate-50 border border-slate-200 text-xs text-blue-700 font-semibold rounded-lg px-2.5 py-1 focus:outline-none"
                     >
                       <option value="New">New</option>
                       <option value="Under Review">Under Review</option>
@@ -151,8 +151,8 @@ export const AdminInquiries: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="text-xs text-gray-300 bg-[#121212] p-4 rounded-xl border border-[#1f1f1f] leading-relaxed">
-                  <p className="font-semibold text-white mb-1">Project Requirements:</p>
+                <div className="text-xs text-slate-700 bg-slate-50 p-4 rounded-xl border border-slate-200 leading-relaxed">
+                  <p className="font-semibold text-slate-900 mb-1">Project Requirements:</p>
                   <p className="whitespace-pre-wrap">{inq.project_description}</p>
                 </div>
 
@@ -181,18 +181,18 @@ export const AdminInquiries: React.FC = () => {
       ) : (
         <div className="space-y-4">
           {contactInquiries.length === 0 ? (
-            <div className="p-8 text-center rounded-2xl bg-[#0f0f0f] border border-[#222]">
-              <p className="text-xs text-gray-400">No contact inquiries recorded yet.</p>
+            <div className="p-8 text-center rounded-2xl bg-white border border-slate-200 shadow-sm">
+              <p className="text-xs text-slate-500">No contact inquiries recorded yet.</p>
             </div>
           ) : (
             contactInquiries.map((inq) => (
               <div
                 key={inq.id}
-                className="p-6 rounded-2xl bg-[#0e0e0e] border border-[#242424] shadow-card space-y-3"
+                className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm shadow-card space-y-3"
               >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#1c1c1c] pb-3">
                   <div>
-                    <h3 className="text-sm font-bold text-white font-heading">
+                    <h3 className="text-sm font-bold text-slate-900 font-heading">
                       {inq.full_name}
                     </h3>
                     <p className="text-[11px] text-muted">{inq.email}</p>
@@ -201,7 +201,7 @@ export const AdminInquiries: React.FC = () => {
                   <select
                     value={inq.status}
                     onChange={(e) => handleUpdateContactStatus(inq.id, e.target.value)}
-                    className="bg-[#181818] border border-[#2b2b2b] text-xs text-gold-300 rounded-lg px-2.5 py-1 focus:outline-none"
+                    className="bg-slate-50 border border-slate-200 text-xs text-blue-700 font-semibold rounded-lg px-2.5 py-1 focus:outline-none"
                   >
                     <option value="New">New</option>
                     <option value="Reviewed">Reviewed</option>
@@ -210,7 +210,7 @@ export const AdminInquiries: React.FC = () => {
                   </select>
                 </div>
 
-                <p className="text-xs text-gray-300 leading-relaxed bg-[#121212] p-3 rounded-lg border border-[#1f1f1f]">
+                <p className="text-xs text-slate-700 leading-relaxed bg-slate-50 p-3 rounded-lg border border-slate-200">
                   {inq.message}
                 </p>
 

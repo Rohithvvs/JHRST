@@ -36,7 +36,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
           <Badge variant="gold">{badge}</Badge>
         </div>
       )}
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight font-heading">
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-tight font-heading">
         {title}{' '}
         {highlight && (
           <span className="text-gold-gradient font-extrabold">{highlight}</span>

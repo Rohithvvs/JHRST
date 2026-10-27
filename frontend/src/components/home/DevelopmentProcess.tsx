@@ -67,7 +67,7 @@ export const DevelopmentProcess: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 relative bg-[#070707] border-t border-[#1a1a1a] overflow-hidden">
+    <section className="py-24 relative bg-[#F1F5F9] border-t border-slate-200 overflow-hidden">
       {/* Background Dot Pattern */}
       <div className="absolute inset-0 bg-dots-pattern opacity-20 pointer-events-none" />
 
@@ -91,8 +91,8 @@ export const DevelopmentProcess: React.FC = () => {
                 maxTilt={7}
                 className={`cursor-pointer p-5 rounded-2xl border flex flex-col justify-between select-none ${
                   isSelected
-                    ? 'glass-card border-gold-400 shadow-gold-sm bg-gold-500/10'
-                    : 'bg-[#101010] border-white/[0.06] hover:border-gold-500/40 hover:bg-[#141414]'
+                    ? 'bg-blue-50/90 border-blue-500 shadow-sm'
+                    : 'bg-white border-slate-200 hover:border-blue-400 hover:bg-slate-50 shadow-sm'
                 }`}
               >
                 <div>
@@ -100,8 +100,8 @@ export const DevelopmentProcess: React.FC = () => {
                     <span
                       className={`text-xs font-mono font-bold px-2 py-0.5 rounded ${
                         isSelected
-                          ? 'bg-gold-500 text-black'
-                          : 'bg-[#1a1a1a] text-gold-400 border border-[#2b2b2b]'
+                          ? 'bg-blue-600 text-white'
+                          : 'bg-slate-100 text-blue-700 border border-slate-200'
                       }`}
                     >
                       {step.number}
@@ -113,15 +113,15 @@ export const DevelopmentProcess: React.FC = () => {
                     />
                   </div>
 
-                  <h3 className="text-sm font-bold text-white font-heading mb-1">
+                  <h3 className="text-sm font-bold text-slate-900 font-heading mb-1">
                     {step.title}
                   </h3>
-                  <p className="text-[11px] text-gold-400 font-mono">
+                  <p className="text-[11px] text-blue-600 font-mono font-semibold">
                     {step.subtitle}
                   </p>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-white/[0.06] flex items-center justify-between text-[10px] text-gray-500">
+                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400">
                   <span>Phase {idx + 1}</span>
                   <span className={isSelected ? 'text-gold-400' : 'text-gray-600'}>●</span>
                 </div>
@@ -139,32 +139,32 @@ export const DevelopmentProcess: React.FC = () => {
             exit={{ opacity: 0, y: -10, rotateX: 10 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             style={{ transformPerspective: 1100, transformOrigin: 'top center' }}
-            className="p-8 rounded-2xl glass-card border border-gold-500/40 shadow-xl grid grid-cols-1 md:grid-cols-12 gap-6 items-center"
+            className="p-8 rounded-2xl bg-white border border-blue-200 shadow-lg grid grid-cols-1 md:grid-cols-12 gap-6 items-center"
           >
             <div className="md:col-span-8 space-y-2">
               <div className="flex items-center gap-2">
-                <span className="text-xs uppercase tracking-widest text-gold-400 font-mono font-bold">
+                <span className="text-xs uppercase tracking-widest text-blue-600 font-mono font-bold">
                   Step {steps[activeStep].number} In Detail:
                 </span>
-                <span className="text-xs text-gray-400">&bull;</span>
-                <span className="text-xs text-gray-300 font-medium">{steps[activeStep].title}</span>
+                <span className="text-xs text-slate-400">&bull;</span>
+                <span className="text-xs text-slate-600 font-medium">{steps[activeStep].title}</span>
               </div>
-              <h4 className="text-xl font-bold text-white font-heading">
+              <h4 className="text-xl font-bold text-slate-900 font-heading">
                 {steps[activeStep].subtitle} Execution
               </h4>
-              <p className="text-sm text-gray-300 leading-relaxed">
+              <p className="text-sm text-slate-600 leading-relaxed">
                 {steps[activeStep].desc}
               </p>
             </div>
 
-            <div className="md:col-span-4 border-t md:border-t-0 md:border-l border-white/[0.08] md:pl-6 space-y-2">
-              <p className="text-xs uppercase font-mono tracking-wider text-gold-400 font-semibold">
+            <div className="md:col-span-4 border-t md:border-t-0 md:border-l border-slate-200 md:pl-6 space-y-2">
+              <p className="text-xs uppercase font-mono tracking-wider text-blue-600 font-semibold">
                 Phase Deliverables:
               </p>
               <div className="space-y-1.5">
                 {steps[activeStep].deliverables.map((item) => (
-                  <div key={item} className="flex items-center gap-2 text-xs text-gray-300">
-                    <span className="w-1.5 h-1.5 rounded-full bg-gold-400" />
+                  <div key={item} className="flex items-center gap-2 text-xs text-slate-600">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
                     <span>{item}</span>
                   </div>
                 ))}

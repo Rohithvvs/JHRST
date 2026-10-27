@@ -132,29 +132,29 @@ export const Careers: React.FC = () => {
   return (
     <div className="pt-28 pb-20">
       {/* Header */}
-      <section className="relative py-16 md:py-24 border-b border-[#1c1c1c] overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[300px] bg-gold-500/10 rounded-full blur-[140px] pointer-events-none" />
+      <section className="relative py-16 md:py-24 border-b border-slate-200 overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[300px] bg-blue-500/10 rounded-full blur-[140px] pointer-events-none" />
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <Badge variant="gold" className="mb-4">
             CAREERS AT JHRST
           </Badge>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight font-heading mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-tight font-heading mb-6">
             Build the Future{' '}
             <span className="text-gold-gradient">with Us.</span>
           </h1>
-          <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto font-normal">
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto font-normal">
             We welcome people who enjoy solving problems, learning new technologies, and building meaningful digital products. Explore active openings or join our talent community.
           </p>
         </div>
       </section>
 
       {/* Openings Grid */}
-      <section className="py-20 bg-[#050505]">
+      <section className="py-20 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 flex items-center justify-between">
             <div>
-              <h2 className="text-2xl font-bold text-white font-heading">
+              <h2 className="text-2xl font-bold text-slate-900 font-heading">
                 Current Opportunities ({jobs.length})
               </h2>
               <p className="text-xs text-muted mt-1">
@@ -172,24 +172,24 @@ export const Careers: React.FC = () => {
               >
                 <div className="space-y-3 max-w-3xl">
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-xs font-semibold px-2.5 py-0.5 rounded bg-gold-500/10 text-gold-400 border border-gold-500/20 uppercase tracking-wider font-mono">
+                    <span className="text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200 uppercase tracking-wider font-mono">
                       {job.department}
                     </span>
-                    <span className="text-xs text-gray-400 flex items-center gap-1 font-mono">
-                      <Clock className="w-3.5 h-3.5 text-gold-400" />
+                    <span className="text-xs text-slate-500 flex items-center gap-1 font-mono">
+                      <Clock className="w-3.5 h-3.5 text-blue-600" />
                       {job.employment_type}
                     </span>
-                    <span className="text-xs text-gray-400 flex items-center gap-1 font-mono">
-                      <MapPin className="w-3.5 h-3.5 text-gold-400" />
+                    <span className="text-xs text-slate-500 flex items-center gap-1 font-mono">
+                      <MapPin className="w-3.5 h-3.5 text-blue-600" />
                       {job.location}
                     </span>
                   </div>
 
-                  <h3 className="text-2xl font-bold text-white font-heading group-hover:text-gold-200 transition-colors">
+                  <h3 className="text-2xl font-bold text-slate-900 font-heading group-hover:text-blue-600 transition-colors">
                     {job.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                     {job.description}
                   </p>
 
@@ -197,7 +197,7 @@ export const Careers: React.FC = () => {
                     {job.requirements.slice(0, 4).map((req, idx) => (
                       <span
                         key={idx}
-                        className="text-[11px] px-2.5 py-1 rounded-md bg-[#161616] border border-white/[0.08] text-gray-300 font-mono"
+                        className="text-[11px] px-2.5 py-1 rounded-md bg-slate-100 border border-slate-200 text-slate-700 font-mono"
                       >
                         {req}
                       </span>
@@ -209,7 +209,7 @@ export const Careers: React.FC = () => {
                   <Button
                     variant="primary"
                     size="md"
-                    className="w-full sm:w-auto shadow-gold-sm hover:shadow-gold-md"
+                    className="w-full sm:w-auto shadow-sm"
                     onClick={() => handleOpenApply(job)}
                   >
                     Apply for Position
@@ -220,12 +220,12 @@ export const Careers: React.FC = () => {
           </div>
 
           {/* General Talent Community Box */}
-          <div className="mt-16 p-8 rounded-2xl bg-[#101010] border border-[#262626] flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="mt-16 p-8 rounded-2xl bg-white border border-slate-200 shadow-md flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              <h3 className="text-lg font-bold text-white font-heading">
+              <h3 className="text-lg font-bold text-slate-900 font-heading">
                 No exact match right now?
               </h3>
-              <p className="text-xs sm:text-sm text-gray-400 mt-1">
+              <p className="text-xs sm:text-sm text-slate-500 mt-1">
                 Stay connected with us for future openings across engineering, research, and product design.
               </p>
             </div>
@@ -271,10 +271,10 @@ export const Careers: React.FC = () => {
               <div className="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto">
                 <CheckCircle className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold text-white font-heading">
+              <h3 className="text-xl font-bold text-slate-900 font-heading">
                 Application Received!
               </h3>
-              <p className="text-xs sm:text-sm text-gray-300 max-w-md mx-auto leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
                 Thank you for applying to JHRST Tech Solutions. Our technical recruitment team will review your qualifications and contact you if there is a match.
               </p>
               <div className="pt-4">
@@ -291,13 +291,13 @@ export const Careers: React.FC = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-medium text-gray-300 mb-1">
+                  <label className="block text-xs font-medium text-slate-700 font-medium mb-1">
                     Full Name <span className="text-red-400">*</span>
                   </label>
                   <input
                     {...register('full_name')}
                     placeholder="Alex Mercer"
-                    className="w-full bg-[#161616] border border-[#2b2b2b] rounded-xl px-3.5 py-2 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-gold-500/50"
+                    className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2 text-xs text-slate-900 placeholder-slate-400 shadow-sm focus:outline-none focus:border-blue-500"
                   />
                   {errors.full_name && (
                     <p className="text-[11px] text-red-400 mt-1">{errors.full_name.message}</p>
@@ -305,14 +305,14 @@ export const Careers: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-gray-300 mb-1">
+                  <label className="block text-xs font-medium text-slate-700 font-medium mb-1">
                     Email Address <span className="text-red-400">*</span>
                   </label>
                   <input
                     {...register('email')}
                     type="email"
                     placeholder="alex@domain.com"
-                    className="w-full bg-[#161616] border border-[#2b2b2b] rounded-xl px-3.5 py-2 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-gold-500/50"
+                    className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2 text-xs text-slate-900 placeholder-slate-400 shadow-sm focus:outline-none focus:border-blue-500"
                   />
                   {errors.email && (
                     <p className="text-[11px] text-red-400 mt-1">{errors.email.message}</p>
@@ -322,23 +322,23 @@ export const Careers: React.FC = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-medium text-gray-300 mb-1">
+                  <label className="block text-xs font-medium text-slate-700 font-medium mb-1">
                     Phone Number (Optional)
                   </label>
                   <input
                     {...register('phone')}
                     placeholder="+1 (555) 000-0000"
-                    className="w-full bg-[#161616] border border-[#2b2b2b] rounded-xl px-3.5 py-2 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-gold-500/50"
+                    className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2 text-xs text-slate-900 placeholder-slate-400 shadow-sm focus:outline-none focus:border-blue-500"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-gray-300 mb-1">
+                  <label className="block text-xs font-medium text-slate-700 font-medium mb-1">
                     Experience Level <span className="text-red-400">*</span>
                   </label>
                   <select
                     {...register('experience_level')}
-                    className="w-full bg-[#161616] border border-[#2b2b2b] rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-gold-500/50"
+                    className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2 text-xs text-slate-900 shadow-sm focus:outline-none focus:border-blue-500"
                   >
                     <option value="Internship">Internship / Student</option>
                     <option value="Entry-level">Entry-level (0-2 years)</option>
@@ -349,13 +349,13 @@ export const Careers: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-gray-300 mb-1">
+                <label className="block text-xs font-medium text-slate-700 font-medium mb-1">
                   Relevant Technical Skills <span className="text-red-400">*</span>
                 </label>
                 <input
                   {...register('relevant_skills')}
                   placeholder="e.g. Python, FastAPI, React, TypeScript, PyTorch, Docker"
-                  className="w-full bg-[#161616] border border-[#2b2b2b] rounded-xl px-3.5 py-2 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-gold-500/50"
+                  className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2 text-xs text-slate-900 placeholder-slate-400 shadow-sm focus:outline-none focus:border-blue-500"
                 />
                 {errors.relevant_skills && (
                   <p className="text-[11px] text-red-400 mt-1">{errors.relevant_skills.message}</p>
@@ -364,13 +364,13 @@ export const Careers: React.FC = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-medium text-gray-300 mb-1">
+                  <label className="block text-xs font-medium text-slate-700 font-medium mb-1">
                     LinkedIn Profile (Optional)
                   </label>
                   <input
                     {...register('linkedin_url')}
                     placeholder="https://linkedin.com/in/username"
-                    className="w-full bg-[#161616] border border-[#2b2b2b] rounded-xl px-3.5 py-2 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-gold-500/50"
+                    className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2 text-xs text-slate-900 placeholder-slate-400 shadow-sm focus:outline-none focus:border-blue-500"
                   />
                   {errors.linkedin_url && (
                     <p className="text-[11px] text-red-400 mt-1">{errors.linkedin_url.message}</p>
@@ -378,13 +378,13 @@ export const Careers: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-gray-300 mb-1">
+                  <label className="block text-xs font-medium text-slate-700 font-medium mb-1">
                     GitHub / Portfolio (Optional)
                   </label>
                   <input
                     {...register('github_url')}
                     placeholder="https://github.com/username"
-                    className="w-full bg-[#161616] border border-[#2b2b2b] rounded-xl px-3.5 py-2 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-gold-500/50"
+                    className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2 text-xs text-slate-900 placeholder-slate-400 shadow-sm focus:outline-none focus:border-blue-500"
                   />
                   {errors.github_url && (
                     <p className="text-[11px] text-red-400 mt-1">{errors.github_url.message}</p>
@@ -394,10 +394,10 @@ export const Careers: React.FC = () => {
 
               {/* PDF File Upload */}
               <div>
-                <label className="block text-xs font-medium text-gray-300 mb-1">
+                <label className="block text-xs font-medium text-slate-700 font-medium mb-1">
                   Resume (PDF only, max 5MB) <span className="text-red-400">*</span>
                 </label>
-                <div className="border border-dashed border-[#333] hover:border-gold-500/50 rounded-xl p-4 text-center cursor-pointer bg-[#141414]">
+                <div className="border border-dashed border-slate-300 hover:border-blue-500 rounded-xl p-4 text-center cursor-pointer bg-slate-50">
                   <input
                     type="file"
                     accept=".pdf,application/pdf"
@@ -406,8 +406,8 @@ export const Careers: React.FC = () => {
                     id="resume-file-input"
                   />
                   <label htmlFor="resume-file-input" className="cursor-pointer flex flex-col items-center">
-                    <FileText className="w-6 h-6 text-gold-400 mb-1" />
-                    <span className="text-xs text-gray-300">
+                    <FileText className="w-6 h-6 text-blue-600 mb-1" />
+                    <span className="text-xs text-slate-600">
                       {resumeFile ? resumeFile.name : 'Click to select PDF document'}
                     </span>
                     <span className="text-[10px] text-muted mt-0.5">PDF up to 5MB</span>
@@ -417,14 +417,14 @@ export const Careers: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-gray-300 mb-1">
+                <label className="block text-xs font-medium text-slate-700 font-medium mb-1">
                   Cover Note / Additional Information
                 </label>
                 <textarea
                   {...register('message')}
                   rows={3}
                   placeholder="Tell us briefly why you'd like to work with JHRST..."
-                  className="w-full bg-[#161616] border border-[#2b2b2b] rounded-xl px-3.5 py-2 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-gold-500/50"
+                  className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2 text-xs text-slate-900 placeholder-slate-400 shadow-sm focus:outline-none focus:border-blue-500"
                 />
               </div>
 
@@ -434,9 +434,9 @@ export const Careers: React.FC = () => {
                   <input
                     type="checkbox"
                     {...register('consent_given')}
-                    className="mt-0.5 rounded border-[#333] bg-[#161616] text-gold-500 focus:ring-gold-500"
+                    className="mt-0.5 rounded border-slate-300 bg-white text-blue-600 focus:ring-blue-500"
                   />
-                  <span className="text-[11px] text-gray-400 leading-relaxed">
+                  <span className="text-[11px] text-slate-500 leading-relaxed">
                     I consent to JHRST Tech Solutions reviewing and storing my application and resume for candidate evaluation according to the Privacy Policy.
                   </span>
                 </label>

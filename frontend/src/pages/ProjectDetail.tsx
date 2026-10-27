@@ -30,7 +30,7 @@ export const ProjectDetail: React.FC = () => {
   if (loading) {
     return (
       <div className="min-h-[60vh] flex items-center justify-center pt-28">
-        <div className="w-8 h-8 border-2 border-gold-500 border-t-transparent rounded-full animate-spin" />
+        <div className="w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
@@ -38,8 +38,8 @@ export const ProjectDetail: React.FC = () => {
   if (!project) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center pt-28 text-center px-4">
-        <h2 className="text-2xl font-bold text-white font-heading mb-4">Project Not Found</h2>
-        <p className="text-gray-400 mb-6">The requested case study could not be found.</p>
+        <h2 className="text-2xl font-bold text-slate-900 font-heading mb-4">Project Not Found</h2>
+        <p className="text-slate-500 mb-6">The requested case study could not be found.</p>
         <Link to="/projects">
           <Button variant="secondary" size="md" leftIcon={<ArrowLeft className="w-4 h-4" />}>
             Back to Projects
@@ -66,7 +66,7 @@ export const ProjectDetail: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <Link
           to="/projects"
-          className="inline-flex items-center gap-2 text-xs font-semibold text-muted hover:text-gold-300 transition-colors"
+          className="inline-flex items-center gap-2 text-xs font-semibold text-muted hover:text-blue-600 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to All Projects</span>
@@ -74,7 +74,7 @@ export const ProjectDetail: React.FC = () => {
       </div>
 
       {/* Hero */}
-      <section className="relative py-12 md:py-16 border-y border-[#1c1c1c] bg-[#090909] overflow-hidden">
+      <section className="relative py-12 md:py-16 border-y border-slate-200 bg-[#F1F5F9] overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[300px] bg-gold-500/10 rounded-full blur-[140px] pointer-events-none" />
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -87,11 +87,11 @@ export const ProjectDetail: React.FC = () => {
             </Badge>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight font-heading mb-6">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-tight font-heading mb-6">
             {project.title}
           </h1>
 
-          <p className="text-base sm:text-xl text-gray-300 leading-relaxed font-normal max-w-3xl mb-8">
+          <p className="text-base sm:text-xl text-slate-600 leading-relaxed font-normal max-w-3xl mb-8">
             {project.short_description}
           </p>
 
@@ -120,27 +120,27 @@ export const ProjectDetail: React.FC = () => {
       </section>
 
       {/* Detailed Analysis */}
-      <section className="py-20 bg-[#050505]">
+      <section className="py-20 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-8 space-y-10">
               {project.problem_statement && (
-                <div className="p-8 rounded-2xl bg-[#0f0f0f] border border-[#222] shadow-card">
-                  <h3 className="text-xl font-bold text-white font-heading mb-3">
+                <div className="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm shadow-card">
+                  <h3 className="text-xl font-bold text-slate-900 font-heading mb-3">
                     The Problem
                   </h3>
-                  <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                     {project.problem_statement}
                   </p>
                 </div>
               )}
 
               {project.solution && (
-                <div className="p-8 rounded-2xl bg-[#0f0f0f] border border-gold-500/30 shadow-card">
-                  <h3 className="text-xl font-bold text-white font-heading mb-3">
+                <div className="p-8 rounded-2xl bg-white border border-blue-200 shadow-sm shadow-card">
+                  <h3 className="text-xl font-bold text-slate-900 font-heading mb-3">
                     The Solution &amp; Technical Approach
                   </h3>
-                  <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                     {project.solution}
                   </p>
                 </div>
@@ -148,16 +148,16 @@ export const ProjectDetail: React.FC = () => {
 
               {project.key_features && project.key_features.length > 0 && (
                 <div>
-                  <h3 className="text-xl font-bold text-white font-heading mb-6">
+                  <h3 className="text-xl font-bold text-slate-900 font-heading mb-6">
                     Core Functionality &amp; Capabilities
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {project.key_features.map((feat, idx) => (
                       <div
                         key={idx}
-                        className="p-4 rounded-xl bg-[#0f0f0f] border border-[#222] flex items-start gap-3"
+                        className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm flex items-start gap-3"
                       >
-                        <Check className="w-4 h-4 text-gold-400 shrink-0 mt-0.5" />
+                        <Check className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
                         <span className="text-xs sm:text-sm text-gray-200">{feat}</span>
                       </div>
                     ))}
@@ -168,7 +168,7 @@ export const ProjectDetail: React.FC = () => {
 
             {/* Sidebar */}
             <div className="lg:col-span-4 space-y-6">
-              <div className="p-6 rounded-2xl bg-[#0f0f0f] border border-[#262626] shadow-card space-y-4">
+              <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm shadow-card space-y-4">
                 <h4 className="text-xs uppercase tracking-wider text-muted font-semibold font-heading">
                   Architecture &amp; Stack
                 </h4>
@@ -176,7 +176,7 @@ export const ProjectDetail: React.FC = () => {
                   {project.tech_stack.map((t) => (
                     <span
                       key={t}
-                      className="text-xs px-3 py-1 rounded-md bg-[#161616] border border-[#262626] text-gold-300 font-medium"
+                      className="text-xs px-3 py-1 rounded-md bg-blue-50 border border-blue-200 text-blue-700 font-semibold font-medium"
                     >
                       {t}
                     </span>
@@ -184,14 +184,14 @@ export const ProjectDetail: React.FC = () => {
                 </div>
               </div>
 
-              <div className="p-6 rounded-2xl bg-gradient-to-br from-[#141414] to-[#0c0c0c] border border-gold-500/30 shadow-card text-center space-y-4">
-                <div className="w-10 h-10 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mx-auto">
+              <div className="p-6 rounded-2xl bg-white border border-blue-200 shadow-card text-center space-y-4">
+                <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 mx-auto">
                   <Sparkles className="w-5 h-5" />
                 </div>
-                <h4 className="text-base font-bold text-white font-heading">
+                <h4 className="text-base font-bold text-slate-900 font-heading">
                   Interested in this Architecture?
                 </h4>
-                <p className="text-xs text-gray-300 leading-relaxed">
+                <p className="text-xs text-slate-600 leading-relaxed">
                   JHRST Tech Solutions can adapt this platform or build custom capabilities for your specific business use case.
                 </p>
                 <Link to={`/contact?service=${encodeURIComponent(project.category)}`}>

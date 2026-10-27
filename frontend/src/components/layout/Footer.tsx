@@ -15,16 +15,16 @@ export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-[#080808] border-t border-[#222222] text-gray-400 pt-16 pb-12 overflow-hidden">
+    <footer className="relative bg-slate-50 border-t border-slate-200 text-slate-600 pt-16 pb-12 overflow-hidden">
       {/* Subtle top gold accent glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/50 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-[#1c1c1c]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-200">
           {/* Column 1: Company Profile (spans 2 on desktop) */}
           <div className="lg:col-span-2 space-y-4">
             <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#1c1c1c] to-[#0a0a0a] border border-gold-500/40 flex items-center justify-center p-2 shadow-gold-sm group-hover:border-gold-400 transition-colors">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0267D6] to-[#014A96] border border-blue-400/30 flex items-center justify-center p-2 shadow-gold-sm group-hover:border-gold-400 transition-colors">
                 <svg viewBox="0 0 40 40" className="w-full h-full">
                   <defs>
                     <linearGradient id="footerGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -53,16 +53,16 @@ export const Footer: React.FC = () => {
                 </svg>
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-white font-heading tracking-tight group-hover:text-gold-300 transition-colors">
+                <span className="text-xl font-bold text-slate-900 font-heading tracking-tight group-hover:text-blue-600 transition-colors">
                   JHRST Tech Solutions
                 </span>
-                <span className="text-[10px] tracking-[0.2em] font-medium text-gold-400 uppercase -mt-0.5">
+                <span className="text-[10px] tracking-[0.2em] font-bold text-blue-600 uppercase -mt-0.5">
                   BUILD. INNOVATE. GROW.
                 </span>
               </div>
             </Link>
 
-            <p className="text-sm text-gray-400 leading-relaxed max-w-sm">
+            <p className="text-sm text-slate-600 leading-relaxed max-w-sm">
               Architecting dependable digital products through high-performance software engineering, applied artificial intelligence, and intelligent business automation.
             </p>
 
@@ -72,7 +72,7 @@ export const Footer: React.FC = () => {
                   href={settings.linkedin_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-lg bg-[#141414] border border-[#262626] flex items-center justify-center text-gray-400 hover:text-gold-300 hover:border-gold-500/40 transition-colors"
+                  className="w-8 h-8 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-blue-600 hover:border-blue-400 shadow-sm transition-colors"
                   aria-label="LinkedIn"
                 >
                   <LinkedinIcon className="w-4 h-4" />
@@ -83,7 +83,7 @@ export const Footer: React.FC = () => {
                   href={settings.github_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-lg bg-[#141414] border border-[#262626] flex items-center justify-center text-gray-400 hover:text-gold-300 hover:border-gold-500/40 transition-colors"
+                  className="w-8 h-8 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-blue-600 hover:border-blue-400 shadow-sm transition-colors"
                   aria-label="GitHub"
                 >
                   <GithubIcon className="w-4 h-4" />
@@ -94,7 +94,7 @@ export const Footer: React.FC = () => {
                   href={settings.instagram_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-lg bg-[#141414] border border-[#262626] flex items-center justify-center text-gray-400 hover:text-gold-300 hover:border-gold-500/40 transition-colors"
+                  className="w-8 h-8 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-blue-600 hover:border-blue-400 shadow-sm transition-colors"
                   aria-label="Instagram"
                 >
                   <InstagramIcon className="w-4 h-4" />
@@ -105,42 +105,42 @@ export const Footer: React.FC = () => {
 
           {/* Column 2: Quick Links */}
           <div className="space-y-3">
-            <h4 className="text-sm font-semibold text-white tracking-wider uppercase font-heading">
+            <h4 className="text-sm font-bold text-slate-900 tracking-wider uppercase font-heading">
               Quick Links
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/" className="hover:text-gold-300 transition-colors">
+                <Link to="/" className="hover:text-blue-600 transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="hover:text-gold-300 transition-colors">
+                <Link to="/about" className="hover:text-blue-600 transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-gold-300 transition-colors">
+                <Link to="/services" className="hover:text-blue-600 transition-colors">
                   Technology Services
                 </Link>
               </li>
               <li>
-                <Link to="/ai-solutions" className="hover:text-gold-300 transition-colors">
+                <Link to="/ai-solutions" className="hover:text-blue-600 transition-colors">
                   AI Solutions
                 </Link>
               </li>
               <li>
-                <Link to="/projects" className="hover:text-gold-300 transition-colors">
+                <Link to="/projects" className="hover:text-blue-600 transition-colors">
                   Project Portfolio
                 </Link>
               </li>
               <li>
-                <Link to="/careers" className="hover:text-gold-300 transition-colors">
+                <Link to="/careers" className="hover:text-blue-600 transition-colors">
                   Careers &amp; Openings
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-gold-300 transition-colors">
+                <Link to="/contact" className="hover:text-blue-600 transition-colors">
                   Contact Us
                 </Link>
               </li>
@@ -149,37 +149,37 @@ export const Footer: React.FC = () => {
 
           {/* Column 3: Services */}
           <div className="space-y-3">
-            <h4 className="text-sm font-semibold text-white tracking-wider uppercase font-heading">
+            <h4 className="text-sm font-bold text-slate-900 tracking-wider uppercase font-heading">
               Capabilities
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/services/ai-and-machine-learning" className="hover:text-gold-300 transition-colors">
+                <Link to="/services/ai-and-machine-learning" className="hover:text-blue-600 transition-colors">
                   AI &amp; Machine Learning
                 </Link>
               </li>
               <li>
-                <Link to="/services/web-application-development" className="hover:text-gold-300 transition-colors">
+                <Link to="/services/web-application-development" className="hover:text-blue-600 transition-colors">
                   Web Application Dev
                 </Link>
               </li>
               <li>
-                <Link to="/services/mobile-application-development" className="hover:text-gold-300 transition-colors">
+                <Link to="/services/mobile-application-development" className="hover:text-blue-600 transition-colors">
                   Mobile Applications
                 </Link>
               </li>
               <li>
-                <Link to="/services/custom-software-development" className="hover:text-gold-300 transition-colors">
+                <Link to="/services/custom-software-development" className="hover:text-blue-600 transition-colors">
                   Custom Software
                 </Link>
               </li>
               <li>
-                <Link to="/services/automation-and-ai-agents" className="hover:text-gold-300 transition-colors">
+                <Link to="/services/automation-and-ai-agents" className="hover:text-blue-600 transition-colors">
                   Automation &amp; Agents
                 </Link>
               </li>
               <li>
-                <Link to="/services/ui-ux-and-digital-product-design" className="hover:text-gold-300 transition-colors">
+                <Link to="/services/ui-ux-and-digital-product-design" className="hover:text-blue-600 transition-colors">
                   UI/UX Product Design
                 </Link>
               </li>
@@ -188,25 +188,25 @@ export const Footer: React.FC = () => {
 
           {/* Column 4: Verified Contact */}
           <div className="space-y-3">
-            <h4 className="text-sm font-semibold text-white tracking-wider uppercase font-heading">
+            <h4 className="text-sm font-bold text-slate-900 tracking-wider uppercase font-heading">
               Connect
             </h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2.5">
-                <Mail className="w-4 h-4 text-gold-400 shrink-0 mt-0.5" />
-                <a href={`mailto:${settings.email}`} className="hover:text-gold-300 transition-colors break-all">
+                <Mail className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
+                <a href={`mailto:${settings.email}`} className="hover:text-blue-600 transition-colors break-all">
                   {settings.email}
                 </a>
               </li>
               <li className="flex items-start gap-2.5">
-                <Phone className="w-4 h-4 text-gold-400 shrink-0 mt-0.5" />
+                <Phone className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
                 <span>{settings.phone}</span>
               </li>
               <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-gold-400 shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
                 <span>{settings.address}</span>
               </li>
-              <li className="text-xs text-gray-500 pt-1">
+              <li className="text-xs text-slate-500 pt-1">
                 {settings.business_hours}
               </li>
             </ul>
@@ -214,19 +214,19 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>
             &copy; {currentYear} JHRST Tech Solutions. All rights reserved.
           </p>
 
           <div className="flex items-center gap-6">
-            <Link to="/privacy-policy" className="hover:text-gold-300 transition-colors">
+            <Link to="/privacy-policy" className="hover:text-blue-600 transition-colors">
               Privacy Policy
             </Link>
-            <Link to="/terms" className="hover:text-gold-300 transition-colors">
+            <Link to="/terms" className="hover:text-blue-600 transition-colors">
               Terms &amp; Conditions
             </Link>
-            <Link to="/admin" className="hover:text-gold-400 transition-colors inline-flex items-center gap-1 text-gray-500 hover:text-gold-400">
+            <Link to="/admin" className="hover:text-blue-600 transition-colors inline-flex items-center gap-1 text-gray-500 hover:text-blue-600">
               <Lock className="w-3 h-3" />
               <span>Admin</span>
             </Link>

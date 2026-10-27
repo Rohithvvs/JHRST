@@ -34,7 +34,7 @@ export const fallbackSettings: CompanySettings = {
   company_name: "JHRST Tech Solutions",
   tagline: "BUILD. INNOVATE. GROW.",
   email: "jhrst9966@gmail.com",
-  phone: "+91 8886315136",
+  phone: "+91 99662 84338",
   address: "Bengaluru, Karnataka, India – 560068",
   business_hours: "Monday - Saturday: 9:00 AM - 6:00 PM IST",
   linkedin_url: "https://linkedin.com/company/jhrst-tech-solutions",

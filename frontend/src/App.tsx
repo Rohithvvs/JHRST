@@ -36,7 +36,7 @@ const PublicLayout: React.FC = () => {
   const reduce = useReducedMotion();
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white flex flex-col justify-between selection:bg-gold-500 selection:text-black">
+    <div className="min-h-screen bg-[#F8FAFC] text-slate-900 flex flex-col justify-between selection:bg-gold-500 selection:text-white">
       <CursorGlow />
       <Navbar />
       <main className="flex-1">

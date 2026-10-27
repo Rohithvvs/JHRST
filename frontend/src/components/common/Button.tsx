@@ -20,7 +20,7 @@ export const Button: React.FC<ButtonProps> = ({
   disabled,
   ...props
 }) => {
-  const baseStyles = 'relative inline-flex items-center justify-center font-medium transition-all duration-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500/50 disabled:opacity-50 disabled:cursor-not-allowed group overflow-hidden';
+  const baseStyles = 'relative inline-flex items-center justify-center font-medium transition-all duration-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 disabled:opacity-50 disabled:cursor-not-allowed group overflow-hidden';
 
   const sizeStyles = {
     sm: 'text-xs px-3.5 py-1.5 gap-1.5',
@@ -30,13 +30,13 @@ export const Button: React.FC<ButtonProps> = ({
 
   const variantStyles = {
     primary:
-      'bg-gradient-to-r from-[#F5D76E] via-[#D4AF37] to-[#B89428] text-black font-semibold shadow-gold-sm hover:shadow-gold-md hover:brightness-105 active:scale-[0.98]',
+      'bg-gradient-to-r from-[#00A6FB] via-[#0267D6] to-[#014A96] text-white font-semibold shadow-gold-sm hover:shadow-gold-md hover:brightness-105 active:scale-[0.98]',
     secondary:
-      'bg-[#141414] hover:bg-[#1C1C1C] text-white border border-[#292929] hover:border-gold-500/50 shadow-card active:scale-[0.98]',
+      'bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 hover:border-blue-500/50 shadow-sm active:scale-[0.98]',
     outline:
-      'bg-transparent text-gold-300 border border-gold-500/40 hover:border-gold-400 hover:bg-gold-500/10 active:scale-[0.98]',
+      'bg-transparent text-blue-600 border border-blue-600/40 hover:border-blue-600 hover:bg-blue-50/60 active:scale-[0.98]',
     ghost:
-      'bg-transparent text-gray-300 hover:text-gold-300 hover:bg-white/5 active:scale-[0.98]',
+      'bg-transparent text-slate-600 hover:text-blue-600 hover:bg-slate-100 active:scale-[0.98]',
   };
 
   return (
@@ -62,4 +62,3 @@ export const Button: React.FC<ButtonProps> = ({
     </button>
   );
 };
-

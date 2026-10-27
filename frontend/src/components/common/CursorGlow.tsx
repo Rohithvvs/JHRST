@@ -9,7 +9,7 @@ export const CursorGlow: React.FC = () => {
   const smoothX = useSpring(x, { stiffness: 140, damping: 24, mass: 0.4 });
   const smoothY = useSpring(y, { stiffness: 140, damping: 24, mass: 0.4 });
   const background = useTransform([smoothX, smoothY], ([px, py]) => {
-    return `radial-gradient(380px circle at ${px}px ${py}px, rgba(212, 175, 55, 0.13), transparent 62%)`;
+    return `radial-gradient(420px circle at ${px}px ${py}px, rgba(2, 103, 214, 0.07), transparent 65%)`;
   });
 
   useEffect(() => {
